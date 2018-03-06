@@ -47,14 +47,12 @@ Here is a table of our commonly used git commands that we've used in this course
 | git | log| --oneline |  Shows a log of commits of a repo (--oneline shows a truncated message)_`q` to exit_|
 | git | status |  |  Shows the state of files in a repo (untracked, modified, staged)|
 
-[Link to our wiki with a more complete list of git commands](https://github.com/ga-students/wdi-remote-matrix/wiki/Git-Cheatsheet)
-
 Note: `fork` is not on this list because `fork` is not a git command; it is a collaboration-site-specific (both GitHub and GitLab use `fork`) for copying a repository on GitLab to a new location on GitLab.
 
 ### Git VCS - Branches and Merging
-Git is a VCS (Version Control System). There are a few popular ones, but git ends up being a top choice because of its branching and merging feature.
+Git is a VCS (Version Control System). There are a few popular ones, but git ends up being a top choice because of its *lightweight* branching and merging feature.
 
-If we think back to our past projects, when we wanted to implement some major changes to our code and failed our popular options were to
+If you think back to past projects without git, when you wanted to implement some major changes to your code and failed your popular options were:
 - `CTRL-Z` throughout our files and hope for the best
 - Comment out a ton of code and hope to restore the functionality of our code to a previous version
 - Seriously contemplate coding out our project from scratch again
@@ -67,14 +65,14 @@ If we think back to our past projects, when we wanted to implement some major ch
 - Feature Based Workflow - Create a new branch for each feature
 - Disposable Experimentation - if a branch doesn't work out, you can just walk away or toss it. It has no impact on the working code
 
-You may be thinking 'this sounds too good to be true!' It's not! But there is a catch! Git requires changing the way we are used to working on projects. Which means it takes some time and practice to learn to use git.
+You may be thinking 'this sounds too good to be true!' It's not! But there is a catch! Git requires changing the way we typically work on projects. Which means it takes some time and practice to learn to use git.
 
 ![git workflow from git about page](https://i.imgur.com/MXiZRI0.png)
 
 
 
 ### New Git Commands
-To be able to use branches, we will have to learn some new git commands
+To use branches, we will learn some new `git` commands
 
 | git | Argument | Flag(s)/Additional arguments | Description |
 |:---:|:-----------:|:-------:|:-----------:|
@@ -84,48 +82,48 @@ To be able to use branches, we will have to learn some new git commands
 | git | checkout | -b new_branch_name  |  Creates a new branch and switches to that branch|
 | git | diff |  |  Let's you see the changes that you have made (before `git add`)|
 
-Even though these are just five new commands, it is going to take some practice to master them. Let's get started!
+Even though these are just five new commands, it requires some practice to master them. Let's get started!
 
-Note: You may have noticed that `git merge` is missing - we will be merging our branches via GitLab, so we will not use this command.
+Note: You may have noticed that `git merge` is missing - we will be merging our branches via GitLab, so we will not use this command via the terminal.
 
 ## Scenario
-You have been hired by Wacky Products Incorporated. They are just weeks away from starting a global marketing campaign for their new hot product Happy Fun Ball and they want a top-notch web page to be launched as soon as possible.
+You have been hired by Wacky Products Incorporated. They are just weeks away from starting a global marketing campaign for their new hot product Happy Fun Ball and they want a top-notch web page launched as soon as possible.
 
-Mysteriously, the entire dev team has lapsed into comas and it is up to you to save the project.
+Mysteriously, the entire dev team has lapsed into comas and it is up to **you** to save the project.
 
-As a professional developer, you will do whatever it takes to finish this project! Everything, BUT work directly on the master branch!
+As a professional developer, you will do whatever it takes to finish this project! Everything, *BUT* work directly on the master branch!
 
 
 ### Setup
 #### Part 1 - Get the files
 ###### Browser - GitLab:
 - Fork Happy-Fun-Ball (make a copy of this remote repository to your GitLab account):
- - [Go here]( https://github.com/Krafalski/hfb) and click fork (upper right) to fork it to your personal repo (Don't worry! You can totally delete it after the lesson!)
-  <details><summary>Show Screenshot</summary>
+ - [Go here]( http://gitlab.cs.usna.edu/taylorpaul/branch_and_merge_exercise) and click `fork` (upper left) to fork it to your personal repo (Don't worry! You can delete it after the lesson if you can't stand clutter!)
 
-  ![Upper right on GitLab](https://i.imgur.com/TjcbBOB.png)
+  <center>![Fork on GitLab](img/gitlab_fork.png)</center>
 
   </details>
-- Navigate to YOUR version on YOUR GitLab repo
+- Navigate to **YOUR** version on **YOUR** GitLab *branch_and_merge_exercise* repo
 - Click the 'clone or download' button (on the right, below fork).
-  <details><summary>Show Screenshot</summary>
 
-  ![Copy or Clone button](https://i.imgur.com/6uAnb0R.png)
+  <center>![Copy button](img/gitlab_clone_url.png)</center>
 
 </details>
 This will give you the option to copy the link to your clipboard and make it ready to paste in the command line.
-- REMEMBER: This should be from YOUR repo (the link to be copied should be `git@GitLab.com:your-GitLab-handle/hfb.git`)
+- REMEMBER: This should be from YOUR repo (the link to be copied should be `git@GitLab.com:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git`)
+
+[comment]: <> (NOTE: Stopped here at 11000 on 6 Mar TODO: Don't forget to update any reference to hfb.pn in the index.html)
 
 ###### Command line:
 - Navigate to a directory **OUTSIDE** of wdi-remote-matrix
 `mkdir` (if you need to)
-- ```$git clone `git@GitLab.com:your-GitLab-handle/hfb.git` ``` (use `CTRL-V` to paste the url from GitLab)
+- ```$git clone `git@GitLab.com:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git` ``` (use `CTRL-V` to paste the url from GitLab)
 - The above command should create a new folder inside your current directory and make copy of everything in the Happy Fun Ball remote repository, locally (on your computer) and initialize git.
  Let's check:
-  - `cd hfb` into the cloned directory and then
+  - `cd branch_and_merge_exercise` into the cloned directory and then
   - `ls` and check that
     - `index.html` and
-    - `main.css` are in your folder (`README.md` & `hfb.png` will also be there)
+    - `main.css` are in your folder (`README.md`, `LICENSE` & `img/` will also be there)
   - `git status`
 
 <details><summary>Example output</summary>  
@@ -137,41 +135,13 @@ This will give you the option to copy the link to your clipboard and make it rea
 </details>
 
   - `git remote -v` - to check your remote set up <details><summary>Example Output</summary>
-  `origin    git@GitLab.com:your-GitLab-handle/hfb.git (fetch)`<br>
-   `origin    git@GitLab.com:your-GitLab-handle/hfb.git (push)`
-
-</details>
-
-#### Part 2 - Configure Git to Have Autocorrect
-To help with today's lesson let's be sure we have autocorrect on.
-Let's test:
-###### Command line:
-- `git chekotu`<details><summary>Example output:</summary>
-`git: 'chekotu' is not a git command.
- See 'git --help'.`
-<br><br>
-`Did you mean this?`<br>
-	`checkout`
-
-
-</details>
-
-We can configure git to have autocorrect, if it is not already set as a default. We are going to install it locally (just to this repository). If you end up liking the configuration, you can always install it globally, later.
-
-###### Command line:
-- `git config --local help.autocorrect` -if the setting has updated, there will be no message
-- try mistyping a git command `git chekotu`<details><summary>Example output:</summary>
-`git: 'chekotu' is not a git command.
- See 'git --help'.`
-<br><br>
-`Did you mean this?`<br>
-	`checkout`
-
+  `origin    git@GitLab.com:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (fetch)`<br>
+   `origin    git@GitLab.com:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (push)`
 
 </details>
 
 
-#### Part 3 - Make a Dev Branch
+#### Part 2 - Make a Dev Branch
 ###### Command line:
 - To make a new branch AND checkout the new branch(we will call our new branch 'dev'):
 - `git checkout -b dev` <details><summary>Example output</summary>
@@ -266,7 +236,7 @@ Your first new feature!  Working in `index.html`, you will add a link to `main.c
 `Writing objects: 100% (3/3), 402 bytes | 0 bytes/s, done.`<br>
 `Total 3 (delta 1), reused 0 (delta 0)`<br>
 `remote: Resolving deltas: 100% (1/1), completed with 1 local objects.`<br>
-`To github.com:Krafalski/hfb.git`<br>
+`To gitlab.cs.usna.edu:taylorpaul/branch_and_merge_exercise.git`<br>
 ` * [new branch]      link-files -> link-files`
 
 </details>
@@ -327,7 +297,7 @@ Note: if you do not get the yellow bar, you will have slightly different navigat
 
 - `git pull origin master` (this should come back as clean but it is a good habit to pull before you push)
 <details><summary>Example output</summary>
-`From github.com:Krafalski/hfb`<br>
+`From gitlab.cs.usna.edu:taylorpaul/branch_and_merge_exercise`<br>
 ` * branch            master     -> FETCH_HEAD` <br>
 `Already up-to-date.`
 
@@ -528,7 +498,7 @@ Note: your numbers/letters after the `>>>>>>>` should be different
 `Writing objects: 100% (11/11), 1.05 KiB | 0 bytes/s, done.` <br>
 `Total 11 (delta 7), reused 0 (delta 0)`<br>
 `remote: Resolving deltas: 100% (7/7), completed with 3 local objects.`<br>
-`To https://github.com/your-GitLab-handle/hfb`<br>
+`To https://github.com/YOUR-GITLAB-HANDLE/branch_and_merge_exercise`<br>
 ` * [new branch]      color-updates -> color-updates`<br>
 </details>
 
