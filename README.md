@@ -2,7 +2,7 @@
 
 ## A Lesson on Git Branches and Merging
 ### Citations
-This repository is a fork of gitlab User Krafalski's [hfb repository](https://gitlab.com/Krafalski/hfb). Capt Taylor Paul made the original modification to port the repository and exercise to gitlab.
+This repository is a fork of gitlab User Krafalski's [hfb repository](https://github.com/Krafalski/hfb). Capt Taylor Paul made the original modification to port the repository and exercise to gitlab.
 
 ### Lesson Objectives
 _After this lesson, students will be able to:_
