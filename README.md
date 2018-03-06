@@ -98,70 +98,52 @@ As a professional developer, you will do whatever it takes to finish this projec
 #### Part 1 - Get the files
 ###### Browser - GitLab:
 - Fork Happy-Fun-Ball (make a copy of this remote repository to your GitLab account):
- - [Go here]( http://gitlab.cs.usna.edu/taylorpaul/branch_and_merge_exercise) and click `fork` (upper left) to fork it to your personal repo (Don't worry! You can delete it after the lesson if you can't stand clutter!)
-
-  <center>![Fork on GitLab](img/gitlab_fork.png)</center>
-
-  </details>
+  - [Go here]( http://gitlab.cs.usna.edu/taylorpaul/branch_and_merge_exercise) and click `fork` (upper left) to fork it to your personal repo (Don't worry! You can delete it after the lesson if you can't stand clutter!)
+  - <details><summary> Click to see screenshot of `fork` button</summary>
+      ![Fork on GitLab](img/gitlab_fork.png)</details>
 - Navigate to **YOUR** version on **YOUR** GitLab *branch_and_merge_exercise* repo
-- Click the 'clone or download' button (on the right, below fork).
-
-  <center>![Copy button](img/gitlab_clone_url.png)</center>
-
-</details>
-This will give you the option to copy the link to your clipboard and make it ready to paste in the command line.
+- Click the *Copy URL to clipboard* button (on the right, beside `fork`)
+  - <details><summary> Click to see screenshot of *Copy URL to clipboard* button</summary>
+  ![Copy button](img/gitlab_clone_url.png)</details>
+  - This will give you the option to copy the link to your clipboard and make it ready to paste in the command line.
 - REMEMBER: This should be from YOUR repo (the link to be copied should be `git@GitLab.com:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git`)
 
-[comment]: <> (NOTE: Stopped here at 11000 on 6 Mar TODO: Don't forget to update any reference to hfb.pn in the index.html)
-
 ###### Command line:
-- Navigate to a directory **OUTSIDE** of wdi-remote-matrix
-`mkdir` (if you need to)
-- ```$git clone `git@GitLab.com:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git` ``` (use `CTRL-V` to paste the url from GitLab)
-- The above command should create a new folder inside your current directory and make copy of everything in the Happy Fun Ball remote repository, locally (on your computer) and initialize git.
+- Navigate to a directory **OUTSIDE** of any other git directories where you would liek to clone the *branch_and_merge_exercise* repo
+- Run this command in your terminal: ```$git clone `git@GitLab.com:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git` ``` (use `CTRL-V` to paste the url from GitLab)
+- The above command should create a new folder inside your current directory and make copy of everything in the Happy Fun Ball (branch_and_merge_exercise) remote repository, locally (on your computer) and initialize a new local git repository.
  Let's check:
   - `cd branch_and_merge_exercise` into the cloned directory and then
   - `ls` and check that
     - `index.html` and
     - `main.css` are in your folder (`README.md`, `LICENSE` & `img/` will also be there)
   - `git status`
-
-<details><summary>Example output</summary>  
-
-`On branch master`<br>
-`Your branch is up-to-date with 'origin/master'.`<br>
-`nothing to commit, working tree clean`
-
-</details>
-
-  - `git remote -v` - to check your remote set up <details><summary>Example Output</summary>
+    <details><summary>Click for example terminal output</summary>
+        `On branch master`<br>
+        `Your branch is up-to-date with 'origin/master'.`<br> `nothing to commit, working tree clean`</details>
+  - `git remote -v` - to check your remote set up <details><summary>Click for example terminal output</summary>
   `origin    git@GitLab.com:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (fetch)`<br>
-   `origin    git@GitLab.com:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (push)`
-
-</details>
-
+   `origin    git@GitLab.com:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (push)`</details>
+---
 
 #### Part 2 - Make a Dev Branch
 ###### Command line:
-- To make a new branch AND checkout the new branch(we will call our new branch 'dev'):
-- `git checkout -b dev` <details><summary>Example output</summary>
-`Switched to a new branch 'dev'`
- </details>
-
+To make a new branch AND checkout the new branch (we will call our new branch 'dev'):
+- `git checkout -b dev`   
+  <details><summary>Example output</summary>
+    `Switched to a new branch 'dev'`</details>
 - `ls`
-  - `index.html` & `main.css`, etc. - should still be there
+    - `index.html` & `main.css`, etc. - should still be there
 - `git status` to confirm everything looks like it should <details><summary>Example output</summary>
 `On branch dev` <br>
 `nothing to commit, working tree clean`
 </details>
-
-- Get this branch on your GitLab repo:
-- `git push origin dev`<details><summary>Example output</summary>
-` * [new branch]      dev -> dev`
-</details>
+- Now let's push this local branch `dev` to your remote repo on GitLab:
+  - `git push origin dev`<details><summary>Example output</summary>
+  ` * [new branch]      dev -> dev`</details>
 
 ###### Browser - GitLab:
-- See your new branch on GitLab (it should be there, refresh if you don't see it. If you still don't see it, let me know and we'll trouble shoot)
+- See your new branch on GitLab (it should be there, refresh the tab if you don't see it. If you still don't see it, let me know and we'll trouble shoot)
 It will be a new message along the top of GitLab OR from clicking the `Branch: master` button <details><summary> Screeshot </summary>
 
 ![pull-down menu](https://i.imgur.com/oIptMUM.png)
@@ -197,7 +179,7 @@ Take a couple minutes to get familiar with the code you'll be working on.
 ### New Feature - Link the HTML and CSS
 Your first new feature!  Working in `index.html`, you will add a link to `main.css`, then you will merge it into the dev branch, and then into master.
 
-#### Part 1 - Make a New Branch
+#### Part 4 - Make a New Branch
 ###### Command line:
 - Let's make a new branch specifically for our new feature
 - `git branch` - to check that you are on the `dev` branch. This command will show all the branches and highlight the one you are on. <details><summary>Example output:</summary>
@@ -213,7 +195,7 @@ Your first new feature!  Working in `index.html`, you will add a link to `main.c
 
 </details>
 
-#### Part 2 - Work on New Feature
+#### Part 5 - Work on New Feature
 ###### Atom - index.html :
 - In the index.html - between the` </title>` and `</head>` tags, let's insert a link to our css :
 - `<link rel="stylesheet" href="main.css">`
@@ -223,7 +205,7 @@ Your first new feature!  Working in `index.html`, you will add a link to `main.c
 - `CTRL-R` - Reload our browser view of the `index.html`
 - The CSS should now be loaded into our `index.html`
 
-#### Part 3 - Feature Completed! Use Git to Track/Add it
+#### Part 6 - Feature Completed! Use Git to Track/Add it
 
 ###### Command line:
 - `git status`
@@ -246,7 +228,7 @@ Your first new feature!  Working in `index.html`, you will add a link to `main.c
 
 </details>
 
-#### Part 4 - Merge New Feature into Dev Branch
+#### Part 7 - Merge New Feature into Dev Branch
 ###### Browser - GitLab:
 - See new branch (either a message will pop up or use the left side pull down to see) <details><summary>Screenshot</summary>![image from below of GitLab](https://i.imgur.com/YtFNJEk.png)
 </details>
@@ -282,7 +264,7 @@ Note: if you do not get the yellow bar, you will have slightly different navigat
 
  Note: You can refuse a merge and close the pull request by pressing the grey `Close pull request` button further down
 
-#### Part 5 - Get the Latest Remote Version of Dev, Locally
+#### Part 8 - Get the Latest Remote Version of Dev, Locally
 ###### Command line:
 - `git checkout dev` (Notice: no `-b`)
 - `git pull origin dev`
@@ -292,7 +274,7 @@ Note: if you do not get the yellow bar, you will have slightly different navigat
 
 - If everything looks good, let's merge these changes into the master branch
 
-#### Part 6 - Merge Dev Branch into Master
+#### Part 9 - Merge Dev Branch into Master
 ###### Command line:
 
 - `git pull origin master` (this should come back as clean but it is a good habit to pull before you push)
@@ -354,7 +336,7 @@ Note: if you do not get the yellow bar, you will have slightly different navigat
 
 Make changes here in main.css ![main.css](https://i.imgur.com/1WY4xj8.png)
 - When we've found the colors we like, we can go ahead and
-- ``CTRL-S`/save`
+- `CTRL-S/save`
 
 ###### Command line:
 - `git status` - see the status of our files
