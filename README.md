@@ -2,7 +2,7 @@
 
 ## A Lesson on Git Branches and Merging
 ### Citations
-This repository is a fork of gitlab User Krafalski's [hfb repository](https://github.com/Krafalski/hfb). Capt Taylor Paul made the original modification to port the repository and exercise to gitlab.
+This repository is a fork of GitHub User Krafalski's [hfb repository](https://github.com/Krafalski/hfb). Capt Taylor Paul made the original modification to port the repository and exercise to GitLab.
 
 ### Lesson Objectives
 _After this lesson, students will be able to:_
@@ -15,11 +15,11 @@ _After this lesson, students will be able to:_
 - Resolve a merge conflict
 
 ### Git Refresher
-So far, you have been using git to get code (pull) from a remote repository (on gitlab), writing your own code, tracking it with git, and moving (push) the code from your computer (local version) to gitlab.
+So far, you have been using git to get code (pull) from a remote repository (on GitLab), writing your own code, tracking it with git, and moving (push) the code from your computer (local version) to GitLab.
 
 When using git locally (on your computer), you have been running the commands in Terminal (Command line).
 
-A git command has a minimum of 1 argument.
+A `git` command has a minimum of 1 argument.
 
 Git commands are always executed by first typing `git`
 
@@ -28,7 +28,7 @@ The first argument is the command (or verb), like
 - `git push` (send the code to a remote location)
 
 The second(+) argument gives the first argument context (when needed)
-- `git add .` (add all files in this directory)
+- `git add <FILENAME>` (add all file with FILENAME)
 - `git pull origin master` (get all files from the url that has an alias of `origin`, from the branch `master`)
 
 Lastly, flags can be added
@@ -47,15 +47,15 @@ Here is a table of our commonly used git commands that we've used in this course
 | git | log| --oneline |  Shows a log of commits of a repo (--oneline shows a truncated message)_`q` to exit_|
 | git | status |  |  Shows the state of files in a repo (untracked, modified, staged)|
 
-[Link to our wiki with a more complete list of git commands](https://gitlab.com/ga-students/wdi-remote-matrix/wiki/Git-Cheatsheet)
+[Link to our wiki with a more complete list of git commands](https://github.com/ga-students/wdi-remote-matrix/wiki/Git-Cheatsheet)
 
-Note: `fork` is not on this list because `fork` is not a git command; it is gitlab-specific for copying a repository on gitlab to a new location on gitlab.
+Note: `fork` is not on this list because `fork` is not a git command; it is a collaboration-site-specific (both GitHub and GitLab use `fork`) for copying a repository on GitLab to a new location on GitLab.
 
 ### Git VCS - Branches and Merging
 Git is a VCS (Version Control System). There are a few popular ones, but git ends up being a top choice because of its branching and merging feature.
 
 If we think back to our past projects, when we wanted to implement some major changes to our code and failed our popular options were to
-- `⌘Z` throughout our files and hope for the best
+- `CTRL-Z` throughout our files and hope for the best
 - Comment out a ton of code and hope to restore the functionality of our code to a previous version
 - Seriously contemplate coding out our project from scratch again
 - Curl up into a ball and hope the code would revert via magic
@@ -86,7 +86,7 @@ To be able to use branches, we will have to learn some new git commands
 
 Even though these are just five new commands, it is going to take some practice to master them. Let's get started!
 
-Note: You may have noticed that `git merge` is missing - we will be merging our branches via gitlab, so we will not use this command.
+Note: You may have noticed that `git merge` is missing - we will be merging our branches via GitLab, so we will not use this command.
 
 ## Scenario
 You have been hired by Wacky Products Incorporated. They are just weeks away from starting a global marketing campaign for their new hot product Happy Fun Ball and they want a top-notch web page to be launched as soon as possible.
@@ -98,15 +98,15 @@ As a professional developer, you will do whatever it takes to finish this projec
 
 ### Setup
 #### Part 1 - Get the files
-###### Browser - gitlab:
-- Fork Happy-Fun-Ball (make a copy of this remote repository to your gitlab account):
- - [Go here]( https://gitlab.com/Krafalski/hfb) and click fork (upper right) to fork it to your personal repo (Don't worry! You can totally delete it after the lesson!)
+###### Browser - GitLab:
+- Fork Happy-Fun-Ball (make a copy of this remote repository to your GitLab account):
+ - [Go here]( https://github.com/Krafalski/hfb) and click fork (upper right) to fork it to your personal repo (Don't worry! You can totally delete it after the lesson!)
   <details><summary>Show Screenshot</summary>
 
-  ![Upper right on gitlab](https://i.imgur.com/TjcbBOB.png)
+  ![Upper right on GitLab](https://i.imgur.com/TjcbBOB.png)
 
   </details>
-- Navigate to YOUR version on YOUR gitlab repo
+- Navigate to YOUR version on YOUR GitLab repo
 - Click the 'clone or download' button (on the right, below fork).
   <details><summary>Show Screenshot</summary>
 
@@ -114,12 +114,12 @@ As a professional developer, you will do whatever it takes to finish this projec
 
 </details>
 This will give you the option to copy the link to your clipboard and make it ready to paste in the command line.
-- REMEMBER: This should be from YOUR repo (the link to be copied should be `git@gitlab.com:your-gitlab-handle/hfb.git`)
+- REMEMBER: This should be from YOUR repo (the link to be copied should be `git@GitLab.com:your-GitLab-handle/hfb.git`)
 
 ###### Command line:
 - Navigate to a directory **OUTSIDE** of wdi-remote-matrix
 `mkdir` (if you need to)
-- ```$git clone `git@gitlab.com:your-gitlab-handle/hfb.git` ``` (use `⌘V` to paste the url from gitlab)
+- ```$git clone `git@GitLab.com:your-GitLab-handle/hfb.git` ``` (use `CTRL-V` to paste the url from GitLab)
 - The above command should create a new folder inside your current directory and make copy of everything in the Happy Fun Ball remote repository, locally (on your computer) and initialize git.
  Let's check:
   - `cd hfb` into the cloned directory and then
@@ -137,8 +137,8 @@ This will give you the option to copy the link to your clipboard and make it rea
 </details>
 
   - `git remote -v` - to check your remote set up <details><summary>Example Output</summary>
-  `origin    git@gitlab.com:your-gitlab-handle/hfb.git (fetch)`<br>
-   `origin    git@gitlab.com:your-gitlab-handle/hfb.git (push)`
+  `origin    git@GitLab.com:your-GitLab-handle/hfb.git (fetch)`<br>
+   `origin    git@GitLab.com:your-GitLab-handle/hfb.git (push)`
 
 </details>
 
@@ -185,14 +185,14 @@ We can configure git to have autocorrect, if it is not already set as a default.
 `nothing to commit, working tree clean`
 </details>
 
-- Get this branch on your gitlab repo:
+- Get this branch on your GitLab repo:
 - `git push origin dev`<details><summary>Example output</summary>
 ` * [new branch]      dev -> dev`
 </details>
 
-###### Browser - gitlab:
-- See your new branch on gitlab (it should be there, refresh if you don't see it. If you still don't see it, let me know and we'll trouble shoot)
-It will be a new message along the top of gitlab OR from clicking the `Branch: master` button <details><summary> Screeshot </summary>
+###### Browser - GitLab:
+- See your new branch on GitLab (it should be there, refresh if you don't see it. If you still don't see it, let me know and we'll trouble shoot)
+It will be a new message along the top of GitLab OR from clicking the `Branch: master` button <details><summary> Screeshot </summary>
 
 ![pull-down menu](https://i.imgur.com/oIptMUM.png)
 
@@ -215,8 +215,8 @@ We are going to be going between the browser, the command line and Atom frequent
 - All other tabs are closed, no other Browser windows are open
 
 **Atom:**
-- directory tree (toggle view: `⌘\`).
-  -  See all Atom shortcuts : `⌘⇧P`
+- directory tree (toggle view: `CTRL-\`).
+  -  See all Atom shortcuts : `CTRL-⇧P`
 - index.html
 -  main.css
 
@@ -247,10 +247,10 @@ Your first new feature!  Working in `index.html`, you will add a link to `main.c
 ###### Atom - index.html :
 - In the index.html - between the` </title>` and `</head>` tags, let's insert a link to our css :
 - `<link rel="stylesheet" href="main.css">`
-- `⌘S` - Save our changes in atom
+- `CTRL-S` - Save our changes in atom
 
 ###### Browser - index.html:
-- `⌘R` - Reload our browser view of the `index.html`
+- `CTRL-R` - Reload our browser view of the `index.html`
 - The CSS should now be loaded into our `index.html`
 
 #### Part 3 - Feature Completed! Use Git to Track/Add it
@@ -266,19 +266,19 @@ Your first new feature!  Working in `index.html`, you will add a link to `main.c
 `Writing objects: 100% (3/3), 402 bytes | 0 bytes/s, done.`<br>
 `Total 3 (delta 1), reused 0 (delta 0)`<br>
 `remote: Resolving deltas: 100% (1/1), completed with 1 local objects.`<br>
-`To gitlab.com:Krafalski/hfb.git`<br>
+`To github.com:Krafalski/hfb.git`<br>
 ` * [new branch]      link-files -> link-files`
 
 </details>
-- Check gitlab to see that the new branch is there <details><summary> Screenshot</summary>
+- Check GitLab to see that the new branch is there <details><summary> Screenshot</summary>
 
-![gitlab new branch screenshot](https://i.imgur.com/YtFNJEk.png)
+![GitLab new branch screenshot](https://i.imgur.com/YtFNJEk.png)
 
 </details>
 
 #### Part 4 - Merge New Feature into Dev Branch
-###### Browser - gitlab:
-- See new branch (either a message will pop up or use the left side pull down to see) <details><summary>Screenshot</summary>![image from below of gitlab](https://i.imgur.com/YtFNJEk.png)
+###### Browser - GitLab:
+- See new branch (either a message will pop up or use the left side pull down to see) <details><summary>Screenshot</summary>![image from below of GitLab](https://i.imgur.com/YtFNJEk.png)
 </details>
 
 - You will either have a yellow bar with your branch name and a green `compare & pull request`or you will have to choose the `Pull requests` tab (the yellow bar does not always appear. It does not automatically mean that something is wrong)
@@ -288,10 +288,10 @@ Note: if you do not get the yellow bar, you will have slightly different navigat
 - Select `base:dev` and `compare: link-files`
 <details><summary>Screenshot</summary>
 
-![gitlab pull request](https://i.imgur.com/AW5kmXJ.png)
+![GitLab pull request](https://i.imgur.com/AW5kmXJ.png)
 
 </details>
-- Wait a moment to let gitlab tell you if there are any merge conflicts <details><summary>Screenshot</summary>
+- Wait a moment to let GitLab tell you if there are any merge conflicts <details><summary>Screenshot</summary>
 
 ![image of able to merge](https://i.imgur.com/Q3BzVry.png)
 
@@ -304,7 +304,7 @@ Note: if you do not get the yellow bar, you will have slightly different navigat
 </details>
 - Press the button, then the button will change to say `Confirm merge` press it again to confirm the merge! <details><summary>Screenshot</summary>
 
-![image of a successful merge on gitlab](https://i.imgur.com/QFpGVAQ.png)
+![image of a successful merge on GitLab](https://i.imgur.com/QFpGVAQ.png)
 
 </details>
 <br>
@@ -318,7 +318,7 @@ Note: if you do not get the yellow bar, you will have slightly different navigat
 - `git pull origin dev`
 
 - Check Atom (`index.html` has the link to CSS)
-- Your browser view (`index.html` is displaying with CSS loaded - don't forget to `⌘R`/refresh your browser to be sure you are seeing the updated version)
+- Your browser view (`index.html` is displaying with CSS loaded - don't forget to `CTRL-R`/refresh your browser to be sure you are seeing the updated version)
 
 - If everything looks good, let's merge these changes into the master branch
 
@@ -327,7 +327,7 @@ Note: if you do not get the yellow bar, you will have slightly different navigat
 
 - `git pull origin master` (this should come back as clean but it is a good habit to pull before you push)
 <details><summary>Example output</summary>
-`From gitlab.com:Krafalski/hfb`<br>
+`From github.com:Krafalski/hfb`<br>
 ` * branch            master     -> FETCH_HEAD` <br>
 `Already up-to-date.`
 
@@ -338,7 +338,7 @@ Note: if you do not get the yellow bar, you will have slightly different navigat
 `Everything up-to-date`
 </details>
 
-###### Browser - gitlab :
+###### Browser - GitLab :
 - If you are still on the merge page, navigate back to the main view
 - Open the `Pull Requests` tab
 - On the right select the green `New pull request` button
@@ -371,7 +371,7 @@ Note: if you do not get the yellow bar, you will have slightly different navigat
 
 ###### Atom - index.html:
 - You probably noticed that index.html had a typo! On (or around) line 19 `class="pr"` should actually be `class="price"`.
-- Let's update that! (Don't forget `⌘S`/save) Now, it's not really our task, or our file to work on, but we're just being proactive and  helpful! What could possibly be wrong with that?
+- Let's update that! (Don't forget `CTRL-S`/save) Now, it's not really our task, or our file to work on, but we're just being proactive and  helpful! What could possibly be wrong with that?
 
 ###### Command line:
 - Let's go ahead and
@@ -384,7 +384,7 @@ Note: if you do not get the yellow bar, you will have slightly different navigat
 
 Make changes here in main.css ![main.css](https://i.imgur.com/1WY4xj8.png)
 - When we've found the colors we like, we can go ahead and
-- ``⌘S`/save`
+- ``CTRL-S`/save`
 
 ###### Command line:
 - `git status` - see the status of our files
@@ -412,10 +412,10 @@ Go through atom and the browser to see that your changes have come back
 ###### Atom - main.css:
 - Let's make one more color change, now that we are on our color-updates branch. `.price` change the color from orange, to whatever color you want
 - Can't find `.price`?
-- `⌘F` will open a find/replace tab at the bottom of Atom and let you look for `.price`
+- `CTRL-F` will open a find/replace tab at the bottom of Atom and let you look for `.price`
 - `esc` to close the find/replace tab
 - make your changes (we are changing the color of elements with the class of `price`)
-- `⌘S` -Don't forget to save your file
+- `CTRL-S` -Don't forget to save your file
 - Refresh your browser to see your changes
 
 ### Starting on a New Feature When We Haven't Finished Our Previous One
@@ -442,25 +442,25 @@ Let's make a new branch off of the dev branch to hotfix this major problem! **
 
 ###### Atom - index.hmtl:
 - Update the price of happy fun ball from `$14.95` to `$24.95` (~ line 19 of `index.html`)
-- `⌘S`/save
+- `CTRL-S`/save
 
 ###### Command line:
 - `git add index.html`
 - `git commit -m 'fixed price of Happy Fun Ball in index.html'`
 - `git pull origin dev` (this should come back clean, but it is good practice to pull before pushing)
-- `git push origin price-fix` to create a new branch on gitlab
+- `git push origin price-fix` to create a new branch on GitLab
 
 ** GOTCHA:  Branches can be created off any other branch. Be sure you are on the branch that you want to branch off of before creating a new branch!
 
 ### Merging Our New Feature into the Dev branch
-###### Browser - gitlab:
-- See our new branch (either a message will pop up or use the left side pull down to see) <details><summary>Screenshot</summary>![gitlab screenshot](https://i.imgur.com/mgEzi40.png)
+###### Browser - GitLab:
+- See our new branch (either a message will pop up or use the left side pull down to see) <details><summary>Screenshot</summary>![GitLab screenshot](https://i.imgur.com/mgEzi40.png)
 </details>
 - Select the `Pull requests` tab
 - On the right side, push the `New pull request` button
 - Select `base: dev` and `compare: price-fix`
-- Wait a moment to let gitlab tell you if there are any merge conflicts
-<details><summary>Screenshot</summary> ![gitlab all clear](https://i.imgur.com/L72S16y.png)
+- Wait a moment to let GitLab tell you if there are any merge conflicts
+<details><summary>Screenshot</summary> ![GitLab all clear](https://i.imgur.com/L72S16y.png)
 </details>
 
 - All clear! Go ahead and press the `Create pull request` button
@@ -516,7 +516,7 @@ Which is ALL of this:
 
 Note: your numbers/letters after the `>>>>>>>` should be different
 - Let's also clean up any extra white space
-- `⌘S`
+- `CTRL-S`
 
 ###### Command line:
 - `git add index.html`
@@ -528,7 +528,7 @@ Note: your numbers/letters after the `>>>>>>>` should be different
 `Writing objects: 100% (11/11), 1.05 KiB | 0 bytes/s, done.` <br>
 `Total 11 (delta 7), reused 0 (delta 0)`<br>
 `remote: Resolving deltas: 100% (7/7), completed with 3 local objects.`<br>
-`To https://gitlab.com/your-gitlab-handle/hfb`<br>
+`To https://github.com/your-GitLab-handle/hfb`<br>
 ` * [new branch]      color-updates -> color-updates`<br>
 </details>
 
@@ -545,7 +545,7 @@ Note: your numbers/letters after the `>>>>>>>` should be different
 - `git commit -m 'updated colors'`
 - `git push origin color-updates`
 
-###### Browser - gitlab :
+###### Browser - GitLab :
 - Pull Request
 - Compare `base: dev` to `compare: color-updates`
 - Wait to be sure there are no conflicts
@@ -570,7 +570,7 @@ Note: your numbers/letters after the `>>>>>>>` should be different
 - `git pull origin dev` (yes, we _just_ did this, but it is a good habit to do a pull before doing a push. It is ok if git tells you `Already up-to-date` )
 - `git push origin dev` (it is ok if git tells you that `Everything up-to-date`)
 
-###### Browser - gitlab:
+###### Browser - GitLab:
 - Pull request
 - Compare `base: master` to `compare: dev`
 - Wait to be sure there are no conflicts
