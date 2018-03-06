@@ -1,6 +1,8 @@
 # Happy Fun Ball
 
 ## A Lesson on Git Branches and Merging
+### Citations
+This repository is a fork of gitlab User Krafalski's [hfb repository](https://gitlab.com/Krafalski/hfb). Capt Taylor Paul made the original modification to port the repository and exercise to gitlab.
 
 ### Lesson Objectives
 _After this lesson, students will be able to:_
@@ -13,7 +15,7 @@ _After this lesson, students will be able to:_
 - Resolve a merge conflict
 
 ### Git Refresher
-So far, you have been using git to get code (pull) from a remote repository (on github), writing your own code, tracking it with git, and moving (push) the code from your computer (local version) to github.
+So far, you have been using git to get code (pull) from a remote repository (on gitlab), writing your own code, tracking it with git, and moving (push) the code from your computer (local version) to gitlab.
 
 When using git locally (on your computer), you have been running the commands in Terminal (Command line).
 
@@ -45,9 +47,9 @@ Here is a table of our commonly used git commands that we've used in this course
 | git | log| --oneline |  Shows a log of commits of a repo (--oneline shows a truncated message)_`q` to exit_|
 | git | status |  |  Shows the state of files in a repo (untracked, modified, staged)|
 
-[Link to our wiki with a more complete list of git commands](https://github.com/ga-students/wdi-remote-matrix/wiki/Git-Cheatsheet)
+[Link to our wiki with a more complete list of git commands](https://gitlab.com/ga-students/wdi-remote-matrix/wiki/Git-Cheatsheet)
 
-Note: `fork` is not on this list because `fork` is not a git command; it is github-specific for copying a repository on github to a new location on github.
+Note: `fork` is not on this list because `fork` is not a git command; it is gitlab-specific for copying a repository on gitlab to a new location on gitlab.
 
 ### Git VCS - Branches and Merging
 Git is a VCS (Version Control System). There are a few popular ones, but git ends up being a top choice because of its branching and merging feature.
@@ -84,7 +86,7 @@ To be able to use branches, we will have to learn some new git commands
 
 Even though these are just five new commands, it is going to take some practice to master them. Let's get started!
 
-Note: You may have noticed that `git merge` is missing - we will be merging our branches via github, so we will not use this command.
+Note: You may have noticed that `git merge` is missing - we will be merging our branches via gitlab, so we will not use this command.
 
 ## Scenario
 You have been hired by Wacky Products Incorporated. They are just weeks away from starting a global marketing campaign for their new hot product Happy Fun Ball and they want a top-notch web page to be launched as soon as possible.
@@ -96,28 +98,28 @@ As a professional developer, you will do whatever it takes to finish this projec
 
 ### Setup
 #### Part 1 - Get the files
-###### Browser - github:
-- Fork Happy-Fun-Ball (make a copy of this remote repository to your github account):
- - [Go here]( https://github.com/Krafalski/hfb) and click fork (upper right) to fork it to your personal repo (Don't worry! You can totally delete it after the lesson!)
-  <details><summary>Show Screenshot</summary> 
-  
-  ![Upper right on github](https://i.imgur.com/TjcbBOB.png)
-  
+###### Browser - gitlab:
+- Fork Happy-Fun-Ball (make a copy of this remote repository to your gitlab account):
+ - [Go here]( https://gitlab.com/Krafalski/hfb) and click fork (upper right) to fork it to your personal repo (Don't worry! You can totally delete it after the lesson!)
+  <details><summary>Show Screenshot</summary>
+
+  ![Upper right on gitlab](https://i.imgur.com/TjcbBOB.png)
+
   </details>
-- Navigate to YOUR version on YOUR github repo
+- Navigate to YOUR version on YOUR gitlab repo
 - Click the 'clone or download' button (on the right, below fork).
   <details><summary>Show Screenshot</summary>
-  
+
   ![Copy or Clone button](https://i.imgur.com/6uAnb0R.png)
-  
+
 </details>
 This will give you the option to copy the link to your clipboard and make it ready to paste in the command line.
-- REMEMBER: This should be from YOUR repo (the link to be copied should be `git@github.com:your-github-handle/hfb.git`)
+- REMEMBER: This should be from YOUR repo (the link to be copied should be `git@gitlab.com:your-gitlab-handle/hfb.git`)
 
 ###### Command line:
 - Navigate to a directory **OUTSIDE** of wdi-remote-matrix
 `mkdir` (if you need to)
-- ```$git clone `git@github.com:your-github-handle/hfb.git` ``` (use `⌘V` to paste the url from github)
+- ```$git clone `git@gitlab.com:your-gitlab-handle/hfb.git` ``` (use `⌘V` to paste the url from gitlab)
 - The above command should create a new folder inside your current directory and make copy of everything in the Happy Fun Ball remote repository, locally (on your computer) and initialize git.
  Let's check:
   - `cd hfb` into the cloned directory and then
@@ -125,7 +127,7 @@ This will give you the option to copy the link to your clipboard and make it rea
     - `index.html` and
     - `main.css` are in your folder (`README.md` & `hfb.png` will also be there)
   - `git status`
-  
+
 <details><summary>Example output</summary>  
 
 `On branch master`<br>
@@ -135,8 +137,8 @@ This will give you the option to copy the link to your clipboard and make it rea
 </details>
 
   - `git remote -v` - to check your remote set up <details><summary>Example Output</summary>
-  `origin    git@github.com:your-github-handle/hfb.git (fetch)`<br>
-   `origin    git@github.com:your-github-handle/hfb.git (push)`
+  `origin    git@gitlab.com:your-gitlab-handle/hfb.git (fetch)`<br>
+   `origin    git@gitlab.com:your-gitlab-handle/hfb.git (push)`
 
 </details>
 
@@ -183,14 +185,14 @@ We can configure git to have autocorrect, if it is not already set as a default.
 `nothing to commit, working tree clean`
 </details>
 
-- Get this branch on your github repo:
+- Get this branch on your gitlab repo:
 - `git push origin dev`<details><summary>Example output</summary>
 ` * [new branch]      dev -> dev`
 </details>
 
-###### Browser - github:
-- See your new branch on github (it should be there, refresh if you don't see it. If you still don't see it, let me know and we'll trouble shoot)
-It will be a new message along the top of github OR from clicking the `Branch: master` button <details><summary> Screeshot </summary> 
+###### Browser - gitlab:
+- See your new branch on gitlab (it should be there, refresh if you don't see it. If you still don't see it, let me know and we'll trouble shoot)
+It will be a new message along the top of gitlab OR from clicking the `Branch: master` button <details><summary> Screeshot </summary>
 
 ![pull-down menu](https://i.imgur.com/oIptMUM.png)
 
@@ -231,7 +233,7 @@ Your first new feature!  Working in `index.html`, you will add a link to `main.c
 - `git branch` - to check that you are on the `dev` branch. This command will show all the branches and highlight the one you are on. <details><summary>Example output:</summary>
 
  ![example output of `git branch`](https://i.imgur.com/2bKy3zL.png)
- 
+
 </details>
 
 
@@ -264,19 +266,19 @@ Your first new feature!  Working in `index.html`, you will add a link to `main.c
 `Writing objects: 100% (3/3), 402 bytes | 0 bytes/s, done.`<br>
 `Total 3 (delta 1), reused 0 (delta 0)`<br>
 `remote: Resolving deltas: 100% (1/1), completed with 1 local objects.`<br>
-`To github.com:Krafalski/hfb.git`<br>
+`To gitlab.com:Krafalski/hfb.git`<br>
 ` * [new branch]      link-files -> link-files`
 
 </details>
-- Check github to see that the new branch is there <details><summary> Screenshot</summary>
+- Check gitlab to see that the new branch is there <details><summary> Screenshot</summary>
 
-![github new branch screenshot](https://i.imgur.com/YtFNJEk.png)
+![gitlab new branch screenshot](https://i.imgur.com/YtFNJEk.png)
 
 </details>
 
 #### Part 4 - Merge New Feature into Dev Branch
-###### Browser - github:
-- See new branch (either a message will pop up or use the left side pull down to see) <details><summary>Screenshot</summary>![image from below of github](https://i.imgur.com/YtFNJEk.png)
+###### Browser - gitlab:
+- See new branch (either a message will pop up or use the left side pull down to see) <details><summary>Screenshot</summary>![image from below of gitlab](https://i.imgur.com/YtFNJEk.png)
 </details>
 
 - You will either have a yellow bar with your branch name and a green `compare & pull request`or you will have to choose the `Pull requests` tab (the yellow bar does not always appear. It does not automatically mean that something is wrong)
@@ -286,10 +288,10 @@ Note: if you do not get the yellow bar, you will have slightly different navigat
 - Select `base:dev` and `compare: link-files`
 <details><summary>Screenshot</summary>
 
-![github pull request](https://i.imgur.com/AW5kmXJ.png)
+![gitlab pull request](https://i.imgur.com/AW5kmXJ.png)
 
 </details>
-- Wait a moment to let github tell you if there are any merge conflicts <details><summary>Screenshot</summary>
+- Wait a moment to let gitlab tell you if there are any merge conflicts <details><summary>Screenshot</summary>
 
 ![image of able to merge](https://i.imgur.com/Q3BzVry.png)
 
@@ -302,7 +304,7 @@ Note: if you do not get the yellow bar, you will have slightly different navigat
 </details>
 - Press the button, then the button will change to say `Confirm merge` press it again to confirm the merge! <details><summary>Screenshot</summary>
 
-![image of a successful merge on github](https://i.imgur.com/QFpGVAQ.png)
+![image of a successful merge on gitlab](https://i.imgur.com/QFpGVAQ.png)
 
 </details>
 <br>
@@ -325,7 +327,7 @@ Note: if you do not get the yellow bar, you will have slightly different navigat
 
 - `git pull origin master` (this should come back as clean but it is a good habit to pull before you push)
 <details><summary>Example output</summary>
-`From github.com:Krafalski/hfb`<br>
+`From gitlab.com:Krafalski/hfb`<br>
 ` * branch            master     -> FETCH_HEAD` <br>
 `Already up-to-date.`
 
@@ -336,7 +338,7 @@ Note: if you do not get the yellow bar, you will have slightly different navigat
 `Everything up-to-date`
 </details>
 
-###### Browser - github :
+###### Browser - gitlab :
 - If you are still on the merge page, navigate back to the main view
 - Open the `Pull Requests` tab
 - On the right select the green `New pull request` button
@@ -446,19 +448,19 @@ Let's make a new branch off of the dev branch to hotfix this major problem! **
 - `git add index.html`
 - `git commit -m 'fixed price of Happy Fun Ball in index.html'`
 - `git pull origin dev` (this should come back clean, but it is good practice to pull before pushing)
-- `git push origin price-fix` to create a new branch on github
+- `git push origin price-fix` to create a new branch on gitlab
 
 ** GOTCHA:  Branches can be created off any other branch. Be sure you are on the branch that you want to branch off of before creating a new branch!
 
 ### Merging Our New Feature into the Dev branch
-###### Browser - github:
-- See our new branch (either a message will pop up or use the left side pull down to see) <details><summary>Screenshot</summary>![github screenshot](https://i.imgur.com/mgEzi40.png)
+###### Browser - gitlab:
+- See our new branch (either a message will pop up or use the left side pull down to see) <details><summary>Screenshot</summary>![gitlab screenshot](https://i.imgur.com/mgEzi40.png)
 </details>
 - Select the `Pull requests` tab
 - On the right side, push the `New pull request` button
 - Select `base: dev` and `compare: price-fix`
-- Wait a moment to let github tell you if there are any merge conflicts
-<details><summary>Screenshot</summary> ![github all clear](https://i.imgur.com/L72S16y.png)
+- Wait a moment to let gitlab tell you if there are any merge conflicts
+<details><summary>Screenshot</summary> ![gitlab all clear](https://i.imgur.com/L72S16y.png)
 </details>
 
 - All clear! Go ahead and press the `Create pull request` button
@@ -526,7 +528,7 @@ Note: your numbers/letters after the `>>>>>>>` should be different
 `Writing objects: 100% (11/11), 1.05 KiB | 0 bytes/s, done.` <br>
 `Total 11 (delta 7), reused 0 (delta 0)`<br>
 `remote: Resolving deltas: 100% (7/7), completed with 3 local objects.`<br>
-`To https://github.com/your-github-handle/hfb`<br>
+`To https://gitlab.com/your-gitlab-handle/hfb`<br>
 ` * [new branch]      color-updates -> color-updates`<br>
 </details>
 
@@ -543,7 +545,7 @@ Note: your numbers/letters after the `>>>>>>>` should be different
 - `git commit -m 'updated colors'`
 - `git push origin color-updates`
 
-###### Browser - github :
+###### Browser - gitlab :
 - Pull Request
 - Compare `base: dev` to `compare: color-updates`
 - Wait to be sure there are no conflicts
@@ -568,7 +570,7 @@ Note: your numbers/letters after the `>>>>>>>` should be different
 - `git pull origin dev` (yes, we _just_ did this, but it is a good habit to do a pull before doing a push. It is ok if git tells you `Already up-to-date` )
 - `git push origin dev` (it is ok if git tells you that `Everything up-to-date`)
 
-###### Browser - github:
+###### Browser - gitlab:
 - Pull request
 - Compare `base: master` to `compare: dev`
 - Wait to be sure there are no conflicts
