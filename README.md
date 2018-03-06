@@ -98,13 +98,14 @@ As a professional developer, you will do whatever it takes to finish this projec
 #### Part 1 - Get the files
 ###### Browser - GitLab:
 - Fork Happy-Fun-Ball (make a copy of this remote repository to your GitLab account):
-  - [Go here]( http://gitlab.cs.usna.edu/taylorpaul/branch_and_merge_exercise) and click `fork` (upper left) to fork it to your personal repo (Don't worry! You can delete it after the lesson if you can't stand clutter!)
-  - <details><summary> Click to see screenshot of `fork` button</summary>
-      ![Fork on GitLab](img/gitlab_fork.png)</details>
+  - [Go here]( http://gitlab.cs.usna.edu/taylorpaul/branch_and_merge_exercise) and click `fork` (upper left) to fork it to your personal repo (Don't worry! You can delete it after the lesson if you can't stand clutter!)  
+
+  ![Fork on GitLab](img/gitlab_fork.png)
 - Navigate to **YOUR** version on **YOUR** GitLab *branch_and_merge_exercise* repo
 - Click the *Copy URL to clipboard* button (on the right, beside `fork`)
-  - <details><summary> Click to see screenshot of *Copy URL to clipboard* button</summary>
-  ![Copy button](img/gitlab_clone_url.png)</details>
+
+    ![Copy button](img/gitlab_clone_url.png)
+
   - This will give you the option to copy the link to your clipboard and make it ready to paste in the command line.
 - REMEMBER: This should be from YOUR repo (the link to be copied should be `git@GitLab.com:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git`)
 
@@ -144,9 +145,9 @@ To make a new branch AND checkout the new branch (we will call our new branch 'd
 
 ###### Browser - GitLab:
 - See your new dev branch on GitLab (it should be there, refresh the tab if you don't see it. If you still don't see it, let me know and we'll trouble shoot)
-You will see a a new message along the top of GitLab and can also see the new change from clicking the drop-down arrow next to *master* <details><summary> Screeshot </summary>
+You will see a a new message along the top of GitLab and can also see the new change from clicking the drop-down arrow next to *master*:
 ![pull-down menu](img/gitlab_dev_branch.png)
-</details>
+
 
 ###### Command line:
 - `atom .`open the files in atom
@@ -155,8 +156,7 @@ You will see a a new message along the top of GitLab and can also see the new ch
 ***
 
 #### Part 3 - Organize yourself
-We are going to be going between the browser, the command line and Atom frequently. Be sure you can work efficiently and effectively by setting up a good workflow! Start by organizing your browser, command line and Atom so that you can easily switch between them. Close extra tabs and browser windows.  <details><summary> Here is one way to work on this project: </summary>
-![window organization](https://i.imgur.com/WAUMTBR.png)</details>
+We are going to be going between the browser, the command line and Atom frequently. Be sure you can work efficiently and effectively by setting up a good workflow! Start by organizing your browser, command line and Atom so that you can easily switch between them. Close extra tabs and browser windows.   
 
 **Browser:**
 - My repo
@@ -184,8 +184,6 @@ In general it is best practice to make a new branch for each bug you are fixing 
 ###### Command line:
 - Let's make a new branch specifically for our new feature
 - `git branch` - to check that you are on the `dev` branch. This command will show all the branches and highlight the one you are on. <details><summary>Example output:</summary> ![example output of `git branch`](https://i.imgur.com/2bKy3zL.png)</details>
-
-
 - `git checkout -b link-files` - this will create a new branch (a copy of the branch we are switching from, in this case: `dev`) called `link-files` and check it out
 <details><summary>Example output:</summary>
 `Switched to a new branch 'link-files'`
