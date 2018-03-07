@@ -97,16 +97,17 @@ As a professional developer, you will do whatever it takes to finish this projec
 ### Setup
 #### Part 1 - Get the files
 ###### Browser - GitLab:
-- Fork Happy-Fun-Ball (make a copy of this remote repository to your GitLab account):
+- Fork Happy-Fun-Ball (make a copy of this remote repository to your GitLab account):  
   - [Go here]( http://gitlab.cs.usna.edu/taylorpaul/branch_and_merge_exercise) and click `fork` (upper left) to fork it to your personal repo (Don't worry! You can delete it after the lesson if you can't stand clutter!)  
+    - ![Fork on GitLab](img/gitlab_fork.png)  
 
-    - ![Fork on GitLab](img/gitlab_fork.png)
-- Navigate to **YOUR** version on **YOUR** GitLab *branch_and_merge_exercise* repo
-- Click the *Copy URL to clipboard* button (on the right, beside `fork`)
+- Navigate to **YOUR** version on **YOUR** GitLab *branch_and_merge_exercise* repo  
 
+- Click the *Copy URL to clipboard* button (on the right, beside `fork`)  
   - ![Copy button](img/gitlab_clone_url.png)
 
-  - This will give you the option to copy the link to your clipboard and make it ready to paste in the command line.
+  - This will give you the option to copy the link to your clipboard and make it ready to paste in the command line.  
+
 - REMEMBER: This should be from YOUR repo (the link to be copied should be `git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git`)
 
 ###### Command line:
