@@ -257,7 +257,7 @@ Git merging can be done both locally via the command line, or remotely using a `
 
 ###### Browser - GitLab:
 - See new `link-files` branch (either a message will pop up or if no message in view use the branch pull down to see)
-  - ![Merge Request Screenshot]](img/gitlab_merge_request.png)
+  - ![Merge Request Screenshot](img/gitlab_merge_request.png)
 
 
 - You should see a blue `Create merge request` button as above. Click it!
