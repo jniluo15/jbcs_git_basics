@@ -193,11 +193,11 @@ We are going to be going between the browser, the command line and Atom frequent
 
 **Atom:**
 - directory tree (toggle view: `CTRL-\`).  
-  -  See all Atom shortcuts : `CTRL-SHIFT-P` and type what you want to do!  
+  - See all Atom shortcuts : `CTRL-SHIFT-P` and type what you want to do!  
 - index.html  
 - main.css  
 
-*Take a couple minutes to get familiar with the code you'll be working on.*
+**Take a couple minutes to get familiar with the code you'll be working on.**
 
 ***
 
