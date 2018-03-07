@@ -111,20 +111,31 @@ As a professional developer, you will do whatever it takes to finish this projec
 - REMEMBER: This should be from YOUR repo (the link to be copied should be `git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git`)
 
 ###### Command line:
-- Navigate to a directory **OUTSIDE** of any other git directories where you would liek to clone the *branch_and_merge_exercise* repo
-- Run this command in your terminal: ```$git clone `git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git` ``` (use `CTRL-V` to paste the URL from GitLab)
+- Navigate to a directory **OUTSIDE** of any other git directories where you would liek to clone the *branch_and_merge_exercise* repo  
+
+- Run this command in your terminal: ```$git clone `git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git` ``` (use `CTRL-V` to paste the URL from GitLab)  
+
 - The above command should create a new folder inside your current directory and make copy of everything in the Happy Fun Ball (branch_and_merge_exercise) remote repository, locally (on your computer) and initialize a new local git repository.
- Let's check:
-  - `cd branch_and_merge_exercise` into the cloned directory and then
-  - `ls` and check that
-    - `index.html` and
-    - `main.css` are in your folder (`README.md`, `LICENSE` & `img/` will also be there)
-  - `git status`
+ Let's check:  
+
+  - `cd branch_and_merge_exercise` into the cloned directory and then  
+
+  - `ls` and check that  
+
+    - `index.html` and  
+
+    - `main.css` are in your folder (`README.md`, `LICENSE` & `img/` will also be there)  
+
+  - `git status`  
+
     <details><summary>Click for example terminal output</summary>
         `On branch master`<br>
-        `Your branch is up-to-date with 'origin/master'.`<br> `nothing to commit, working tree clean`</details>
-  - `git remote -v` - to check your remote set up <details><summary>Click for example terminal output</summary>
-  `origin    git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (fetch)`<br>
+        `Your branch is up-to-date with 'origin/master'.`<br> `nothing to commit, working tree clean`</details>  
+
+  - `git remote -v` - to check your remote set up   
+
+  <details><summary>Click for example terminal output</summary>  
+  `origin    git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (fetch)`  
    `origin    git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (push)`</details>
 ---
 
