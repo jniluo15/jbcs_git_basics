@@ -143,28 +143,40 @@ As a professional developer, you will do whatever it takes to finish this projec
 
 #### Part 2 - Make a Dev Branch
 ###### Command line:
-To make a new branch AND checkout the new branch (we will call our new branch 'dev'):
-- `git checkout -b dev`   
-  <details><summary>Example output</summary>
-    `Switched to a new branch 'dev'`</details>
-- `ls`
-    - `index.html` & `main.css`, etc. - should still be there
-- `git status` to confirm everything looks like it should <details><summary>Example output</summary>
-`On branch dev` <br>
-`nothing to commit, working tree clean`
-</details>
-- Now let's push this *new* local branch `dev` to your remote repo on GitLab:
-  - `git push origin dev`<details><summary>Example output</summary>
-  ` * [new branch]      dev -> dev`</details>
+To make a new branch AND checkout the new branch (we will call our new branch 'dev'):  
+
+- `git checkout -b dev`  
+
+  - <details><summary>Example output</summary>
+    `Switched to a new branch 'dev'`</details>  
+
+- `ls`  
+
+    - `index.html` & `main.css`, etc. - should still be there  
+
+- `git status` to confirm everything looks like it should  
+
+  - <details><summary>Example output</summary>
+    `On branch dev`  
+    `nothing to commit, working tree clean`</details>  
+
+- Now let's push this *new* local branch `dev` to your remote repo on GitLab:    
+
+  - `git push origin dev`
+
+    -  <details><summary>Example output</summary>
+  ` * [new branch]      dev -> dev`</details>  
 
 ###### Browser - GitLab:
-- See your new dev branch on GitLab (it should be there, refresh the tab if you don't see it. If you still don't see it, let me know and we'll trouble shoot)
-You will see a a new message along the top of GitLab and can also see the new change from clicking the drop-down arrow next to *master*:
-  - ![pull-down menu](img/gitlab_dev_branch.png)
+See your new dev branch on GitLab (it should be there, refresh the tab if you don't see it. If you still don't see it, let me know and we'll trouble shoot)
+You will see a a new message along the top of GitLab and can also see the new change from clicking the drop-down arrow next to *master*:  
+
+![pull-down menu](img/gitlab_dev_branch.png)
 
 
 ###### Command line:
-- `atom .`open the files in atom
+- `atom .`open the files in atom  
+
 - `open index.html` open index.html in the browser (remember you can do `open i` and then press `tab` to autocomplete index.html)
 
 ***
