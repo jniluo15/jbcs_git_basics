@@ -215,57 +215,53 @@ In general it is best practice to make a new branch for each bug you are fixing 
 - `git add index.html`
 - `git commit -m 'index.html and main.css linked'`
 - `git push origin link-files`  (Remember: `origin`and `link-files` can be autocompeletd by using `tab`) <details><summary>Example output:</summary>
-`Counting objects: 3, done.`<br>
-`Delta compression using up to 4 threads.`<br>
-`Compressing objects: 100% (3/3), done.` <br>
-`Writing objects: 100% (3/3), 402 bytes | 0 bytes/s, done.`<br>
-`Total 3 (delta 1), reused 0 (delta 0)`<br>
-`remote: Resolving deltas: 100% (1/1), completed with 1 local objects.`<br>
-`To gitlab.cs.usna.edu:taylorpaul/branch_and_merge_exercise.git`<br>
-` * [new branch]      link-files -> link-files`
-
+`Counting objects: 3, done.`  
+`Delta compression using up to 12 threads.`  
+`Compressing objects: 100% (3/3), done.`  
+`Writing objects: 100% (3/3), 343 bytes | 0 bytes/s, done.`  
+`Total 3 (delta 2), reused 0 (delta 0)`  
+`remote:`  
+`remote: To create a merge request for link-files, visit:`  
+`remote:  `   `http://gitlab.cs.usna.edu/taylorpaul/branch_and_merge_exercise/merge_requests/new?merge_request%5Bsource_branch%5D=link-files`  
+`To git@gitlab.cs.usna.edu:taylorpaul/branch_and_merge_exercise.git`  
+` * [new branch]      link-files -> link-files`  
 </details>
-- Check GitLab to see that the new branch is there <details><summary> Screenshot</summary>
+- Check GitLab to see that the new branch is there like we did above!
 
-![GitLab new branch screenshot](https://i.imgur.com/YtFNJEk.png)
+***
 
-</details>
+#### Part 4 - Merge New Feature into Dev Branch via GitLab
+Git merging can be done both locally via the command line, or remotely using a `merge request` via GitLab (Note: a `merge request` on GitLab is equivalent to a `pull request` on GitHub, both are completing a merge of branches!). When working by yourself, when you have full permissions to all project branches, you will likely use the terminal to conduct your merges. When working on a collaboration project, where usually only a select group of people (like your Team Leader) have permission to merge into production branches, you will more often initiate a merge via GitLab and a `merge request`!  Let's start with the `merge request` method!
 
-#### Part 4 - Merge New Feature into Dev Branch
+See the [git documentation](https://git-scm.com/docs/git-merge) for more information on the `merge` command!
+
 ###### Browser - GitLab:
-- See new branch (either a message will pop up or use the left side pull down to see) <details><summary>Screenshot</summary>![image from below of GitLab](https://i.imgur.com/YtFNJEk.png)
-</details>
+- See new `link-files` branch (either a message will pop up or if no message in view use the branch pull down to see)
+  - ![Merge Request Screenshot]](img/gitlab_merge_request.png)
 
-- You will either have a yellow bar with your branch name and a green `compare & pull request`or you will have to choose the `Pull requests` tab (the yellow bar does not always appear. It does not automatically mean that something is wrong)
 
-Note: if you do not get the yellow bar, you will have slightly different navigation to complete this step, a detailed outline is down below in the `Part 6: Merge Dev Branch into Master` section.
-- Push the `Compare & pull request button` that is on the right of the yellow bar
-- Select `base:dev` and `compare: link-files`
-<details><summary>Screenshot</summary>
+- You should see a blue `Create merge request` button as above. Click it!
+- The title of your request matches your commit message by default, update it as you see fit.
+- Add a longer description of what you accomplished on your branch if you desire.
+- Explore some of the Assignee, [Milestone](https://docs.gitlab.com/ce/user/project/milestones/) and [Labels](https://docs.gitlab.com/ce/user/project/labels.html) features of GitLab, you can add as many of these as you desire.
+- Make sure the Source branch (`link-files`) and Target branch (`dev`) make sense (match below). If not click `Change branches` and adjust necessary Source and Target branches:
+  - ![Source branch](img/gitlab_merge_branches.png)
 
-![GitLab pull request](https://i.imgur.com/AW5kmXJ.png)
 
-</details>
-- Wait a moment to let GitLab tell you if there are any merge conflicts <details><summary>Screenshot</summary>
+- Go ahead and press the `Submit merge request` button, wait a moment and you should see a green `Merge` button about midway down the new page.
+  - ![Merge with Checkbox](img/gitlab_merge.png)
 
-![image of able to merge](https://i.imgur.com/Q3BzVry.png)
 
-</details>
+- Press the button, it will take a few seconds and you should see a success message!
+  - ![image of a successful merge on GitLab](img/merge_success.png)
 
-- All clear! Go ahead and press the `Create pull request` button, wait a moment and you should see a green `Merge pull request` button about midway down. <details><summary>Screenshot</summary>
 
-![Merge pull request view](https://i.imgur.com/MlXlXg3.png)
-
-</details>
-- Press the button, then the button will change to say `Confirm merge` press it again to confirm the merge! <details><summary>Screenshot</summary>
-
-![image of a successful merge on GitLab](https://i.imgur.com/QFpGVAQ.png)
-
-</details>
 <br>
- Note: When you work on a team it is unlikely that you would merge your own pull requests
+ **Note:** When you work on a team it is unlikely that you would merge your own `merge requests`
 
- Note: You can refuse a merge and close the pull request by pressing the grey `Close pull request` button further down
+ **Note:** You can refuse a merge and close the merge request by pressing the grey `Close merge request` button further down
+
+ **Note:** After a successful merge, click the `Remove Source Branch` button to remove branches from the repo that are single feature branches. (i.e. you wouldn't ever remove the `dev` branch)
 
 #### Part 5 - Get the Latest Remote Version of Dev, Locally
 ###### Command line:
@@ -277,7 +273,7 @@ Note: if you do not get the yellow bar, you will have slightly different navigat
 
 - If everything looks good, let's merge these changes into the master branch
 
-#### Part 6 - Merge Dev Branch into Master
+#### Part 6 - Merge Dev Branch into Master via GitLab
 ###### Command line:
 
 - `git pull origin master` (this should come back as clean but it is a good habit to pull before you push)
