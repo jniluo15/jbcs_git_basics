@@ -206,6 +206,8 @@ In general it is best practice to make a new branch for each bug you are fixing 
 - `CTRL-R` - Reload our browser view of the `index.html`
 - The CSS should now be loaded into our `index.html`
 
+***
+
 #### Part 3 - Feature Completed! Use Git to Track/Add it
 
 ###### Command line:
