@@ -175,7 +175,7 @@ You will see a a new message along the top of GitLab and can also see the new ch
 
 
 ###### Command line:
-- `atom .`open the files in atom  
+- `atom .` open the files in atom  
 
 - `open index.html` open index.html in the browser (remember you can do `open i` and then press `tab` to autocomplete index.html)
 
@@ -192,14 +192,12 @@ We are going to be going between the browser, the command line and Atom frequent
 - All other tabs are closed, no other Browser windows are open
 
 **Atom:**
-- directory tree (toggle view: `CTRL-\`).
-  -  See all Atom shortcuts : `CTRL-SHIFT-P` and type what you want to do!
-- index.html
--  main.css
+- directory tree (toggle view: `CTRL-\`).  
+  -  See all Atom shortcuts : `CTRL-SHIFT-P` and type what you want to do!  
+- index.html  
+- main.css  
 
-</details>
-
-Take a couple minutes to get familiar with the code you'll be working on.
+*Take a couple minutes to get familiar with the code you'll be working on.*
 
 ***
 
