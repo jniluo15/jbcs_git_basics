@@ -67,7 +67,7 @@ If you think back to past projects without git, when you wanted to implement som
 
 You may be thinking 'this sounds too good to be true!' It's not! But there is a catch! Git requires changing the way we typically work on projects. Which means it takes some time and practice to learn to use git.
 
-![git workflow from git about page](https://i.imgur.com/MXiZRI0.png)
+![git workflow from git about page](img/git_workflow.png)
 
 
 
@@ -107,11 +107,11 @@ As a professional developer, you will do whatever it takes to finish this projec
   - ![Copy button](img/gitlab_clone_url.png)
 
   - This will give you the option to copy the link to your clipboard and make it ready to paste in the command line.
-- REMEMBER: This should be from YOUR repo (the link to be copied should be `git@GitLab.com:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git`)
+- REMEMBER: This should be from YOUR repo (the link to be copied should be `git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git`)
 
 ###### Command line:
 - Navigate to a directory **OUTSIDE** of any other git directories where you would liek to clone the *branch_and_merge_exercise* repo
-- Run this command in your terminal: ```$git clone `git@GitLab.com:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git` ``` (use `CTRL-V` to paste the URL from GitLab)
+- Run this command in your terminal: ```$git clone `git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git` ``` (use `CTRL-V` to paste the URL from GitLab)
 - The above command should create a new folder inside your current directory and make copy of everything in the Happy Fun Ball (branch_and_merge_exercise) remote repository, locally (on your computer) and initialize a new local git repository.
  Let's check:
   - `cd branch_and_merge_exercise` into the cloned directory and then
@@ -123,8 +123,8 @@ As a professional developer, you will do whatever it takes to finish this projec
         `On branch master`<br>
         `Your branch is up-to-date with 'origin/master'.`<br> `nothing to commit, working tree clean`</details>
   - `git remote -v` - to check your remote set up <details><summary>Click for example terminal output</summary>
-  `origin    git@GitLab.com:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (fetch)`<br>
-   `origin    git@GitLab.com:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (push)`</details>
+  `origin    git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (fetch)`<br>
+   `origin    git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (push)`</details>
 ---
 
 #### Part 2 - Make a Dev Branch
@@ -284,29 +284,31 @@ Git merging can be done both locally via the command line, or remotely using a `
 - `git pull origin master`: pulls any changes from origin (gitlab.cs.usna.edu) master (Your master branch in your project on GitLab) into your current branch (`dev`)
 
   - This should come back with "Already up-to-date" but it is a good habit to pull any updates from `master` since creating your branch of `dev` before you try and merge the `dev` branch back into `master`! **Please ask me for clarification if this doesn't make sense!**
-<details><summary>Example output</summary>`From gitlab.cs.usna.edu:taylorpaul/branch_and_merge_exercise`  
+  - <details><summary>Example output</summary>`From gitlab.cs.usna.edu:taylorpaul/branch_and_merge_exercise`  
     ` * branch            master     -> FETCH_HEAD`
     `Already up-to-date.`</details>
 
 
 - `git push origin dev` (this should also come back as clean - since we have changed nothing in our code), it is good to get in the habit of checking yourself often!
-<details><summary>Example output</summary>
-`Everything up-to-date`
-</details>
+ - <details><summary>Example output</summary>
+   `Everything up-to-date`
+   </details>
 
 ###### Command line Merge :
 See the [git documentation](https://git-scm.com/docs/git-merge) for more information on the `merge` command! Now that we are sure everything is up-to-date, let's actually do our merge!
 - `git checkout master` (Notice: no `-b`)
 - `git pull origin master` (again just in case, note this command now affects our local `master` branch ONLY!)
 - `git merge dev`
+  - <details><summary>Example output (Note: You might have different number of changes!)</summary>
+  `Updating b519be4..f8cd536`  
+  `Fast-forward`  
+  `index.html | 16 ++++++++++++++`  
+  `1 file changed, 1 insertions(+), 1 deletions(-)`  
 
-###### Command line:
-- `git checkout master`(Notice: no `-b`)
-- `git pull origin master`
+Now you should check your `master` branch on GitLab and in Atom to see that expected changes are present! Refresh your browser and you should see CSS applied to `index.html`!
 
-###### Atom/Browser
-- Check to make sure everything has updated as expected (`index.html` has link to css and when you refresh the browser, the CSS still loads)
 ***
+
 ### New Feature - Update the colors
  Work on a new feature: Working in the `main.css` file, you will update the colors of the Happy Fun Ball web page
 
@@ -318,7 +320,7 @@ See the [git documentation](https://git-scm.com/docs/git-merge) for more informa
   - `git checkout -b color-updates`
 
 
-  ** GOTCHA: Branches can be created off any other branch. Be sure you are on the branch that you want to branch off of before creating a new branch!
+  ** GOTCHA:** Branches can be created off any other branch. Be sure you are on the branch that you want to branch off of before creating a new branch!
 
 ###### Atom - index.html:
 - You probably noticed that index.html had a typo! On (or around) line 19 `class="pr"` should actually be `class="price"`.
@@ -333,7 +335,7 @@ See the [git documentation](https://git-scm.com/docs/git-merge) for more informa
 ###### Atom - main.css:
 - Now let's update the colors in the `body`, let's change `color` (font color), and `background-color` to whatever our heart desires. [Go ahead and use hexadecimal colors, rgb, hsl or some of the standard web colors.]( http://htmlcolorcodes.com/color-names/)
 
-Make changes here in main.css ![main.css](https://i.imgur.com/1WY4xj8.png)
+Make changes here in main.css ![main.css](img/main_css.png)
 - When we've found the colors we like, we can go ahead and
 - `CTRL-S/save`
 
@@ -373,11 +375,11 @@ Go through atom and the browser to see that your changes have come back
 There was an error! The price of Happy Fun Ball is supposed to be $24.95, not $14.95!
 <br>
 
-Let's make a new branch off of the dev branch to hotfix this major problem! **
+**Let's make a new branch off of the dev branch to this major problem!**
 
 ###### Command line:
 - `git checkout dev`<br>
-- Oops! We forgot to `git add .` & `git commit -m''`!!
+- Oops! We forgot to `git add` & `git commit -m ""`!!
 
 
 `error: Your local changes to the following files would be overwritten by checkout:` <br>
@@ -385,11 +387,11 @@ Let's make a new branch off of the dev branch to hotfix this major problem! **
 `Please commit your changes or stash them before you switch branches.` <br>
 `Aborting`
 - We will commit our changes (we will not cover `stash` today):
-
-- `git add .`
+- `git add main.css`
+- `git status`: just to be sure there weren't any other changes we made!
 - `git commit -m 'changed .price color'`
--  `git checkout dev`
-- `git checkout -b price-fix` to make a new branch off of dev (and automatically be switched to the new branch) **
+- `git checkout dev`
+- `git checkout -b price-fix` to make a new branch off of dev (and automatically be switched to the new branch)
 
 ###### Atom - index.hmtl:
 - Update the price of happy fun ball from `$14.95` to `$24.95` (~ line 19 of `index.html`)
@@ -401,25 +403,18 @@ Let's make a new branch off of the dev branch to hotfix this major problem! **
 - `git pull origin dev` (this should come back clean, but it is good practice to pull before pushing)
 - `git push origin price-fix` to create a new branch on GitLab
 
-** GOTCHA:  Branches can be created off any other branch. Be sure you are on the branch that you want to branch off of before creating a new branch!
+** GOTCHA:**  Branches can be created off any other branch. Be sure you are on the branch that you want to branch off of before creating a new branch!
+
 ***
 ### Merging Our New Feature into the Dev branch
 ###### Browser - GitLab:
-- See our new branch (either a message will pop up or use the left side pull down to see) <details><summary>Screenshot</summary>![GitLab screenshot](https://i.imgur.com/mgEzi40.png)
-</details>
-- Select the `Pull requests` tab
-- On the right side, push the `New pull request` button
-- Select `base: dev` and `compare: price-fix`
+- See our new branch
+- Follow the instructions provided previously for creating a new `merge request`
 - Wait a moment to let GitLab tell you if there are any merge conflicts
-<details><summary>Screenshot</summary> ![GitLab all clear](https://i.imgur.com/L72S16y.png)
-</details>
+- All clear! Go ahead and press the `Merge` button (Note: when you work on a team, it is unlikely that you would merge your own pull requests)
 
-- All clear! Go ahead and press the `Create pull request` button
-- A new screen will appear, enter a message if you like, otherwise push the `Create pull request button`
-- `merge pull request` button, wait a moment, then go ahead and confirm the merge! (Note: when you work on a team, it is unlikely that you would merge your own pull requests)
-<details><summary>Screenshot</summary>![Merge Pull Request message and button](https://i.imgur.com/2yUuGmq.png)
-</details>
 ***
+
 ### Going Back to Our Updated Colors Feature
 - Whew! That was exciting! It's nice to be back to working on this feature. We know there were changes to the `dev` branch, so let's get them
 
@@ -442,16 +437,18 @@ ERROR! Merge conflict! Example output:
 `Automatic merge failed; fix conflicts and then commit the result.`
 
 **Uh-oh...**
+
 ***
+
 ### Merge Conflict (and Resolution)!
 
 ###### Atom - index.html :
 
-- View the conflict in Atom
+- View the conflict in Atom, the editor even gives you buttons for which change to keep! (Ours: Local, Theirs: Remote) **DON'T** use these buttons this time!
 
-![index.html file](https://i.imgur.com/itPVnM1.png)
+![index.html file](img/merge_conflict.png)
 
-- Delete  everything between (including these lines as well) `<<<<<<< HEAD` and `========`:
+- Delete  everything between (including these lines as well) `<<<<<<< HEAD` and `========`
 
 Which is ALL of this:
 
@@ -462,10 +459,10 @@ Which is ALL of this:
 
 - This conflict is our doing, let's get rid of our mistake from working in index.html when we were only supposed to be working in main.css and keep the change made from the price-fix branch
 
-- Now that we've removed the conflict let's finish cleaning up the conflict and remove the line
+- Now that we've removed the conflict let's finish cleaning up: fix `pr` to `price` again and remove the line:  
 `>>>>>>> 3b73c340f2c158a80ce20828fd94ad83ea60b444`
 
-Note: your numbers/letters after the `>>>>>>>` should be different
+*Note:* your numbers/letters after the `>>>>>>>` should be different
 - Let's also clean up any extra white space
 - `CTRL-S`
 
@@ -479,7 +476,7 @@ Note: your numbers/letters after the `>>>>>>>` should be different
 `Writing objects: 100% (11/11), 1.05 KiB | 0 bytes/s, done.` <br>
 `Total 11 (delta 7), reused 0 (delta 0)`<br>
 `remote: Resolving deltas: 100% (7/7), completed with 3 local objects.`<br>
-`To https://github.com/YOUR-GITLAB-HANDLE/branch_and_merge_exercise`<br>
+`To https://gitlab.cs.usna.edu/YOUR-GITLAB-HANDLE/branch_and_merge_exercise`<br>
 ` * [new branch]      color-updates -> color-updates`<br>
 </details>
 
@@ -515,27 +512,25 @@ Note: your numbers/letters after the `>>>>>>>` should be different
 - If everything is ok, go ahead and merge the changes to master
 - If you made changes, don't forget to
 - `git add` and
--  `git commit -m ''`
+- `git commit -m ''`
 
 ###### Command line:
 - `git pull origin dev` (yes, we _just_ did this, but it is a good habit to do a pull before doing a push. It is ok if git tells you `Already up-to-date` )
 - `git push origin dev` (it is ok if git tells you that `Everything up-to-date`)
 
 ###### Browser - GitLab:
-- Pull request
-- Compare `base: master` to `compare: dev`
-- Wait to be sure there are no conflicts
-- Create Pull Request
-- Merge Pull Request
-- Confirm Pull Request
-- Check to see that your changes have been successfully made to the master branch
+- Follow the steps covered previously to submit and accept a `merge request`
+- Check to see that your changes have been successfully made to the master branch!
+
 ***
+
 ### Hungry for More?
 - Make a new branch, continue to update the Happy Fun Ball web page, and merge back your changes (New Feature Ideas: change color of Happy Fun Ball. Add a google font. Add some js/jQuery to show/hide Happy Fun Ball's Warnings.)
 - Research and try `git stash`
-- Delete a branch locally and remotely :
+- Delete a branch locally and remotely:
   - Remotely: `git push origin --delete branch_name`
   - Locally: `git branch -d branch_name`
+  - You can also do this in GitLab when you accept a `merge`
 
 
 ### Sudden and Permanent Shut Down of Wacky Products Incorporated
