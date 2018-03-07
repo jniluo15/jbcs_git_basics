@@ -148,7 +148,7 @@ To make a new branch AND checkout the new branch (we will call our new branch 'd
 - `git checkout -b dev`  
 
   - <details><summary>Example output</summary>
-    `Switched to a new branch 'dev'`</details>  
+    `Switched to a new branch 'dev'`</details>
 
 - `ls`  
 
@@ -158,14 +158,14 @@ To make a new branch AND checkout the new branch (we will call our new branch 'd
 
   - <details><summary>Example output</summary>
     `On branch dev`  
-    `nothing to commit, working tree clean`</details>  
+    `nothing to commit, working tree clean`</details>
 
 - Now let's push this *new* local branch `dev` to your remote repo on GitLab:    
 
   - `git push origin dev`
 
     -  <details><summary>Example output</summary>
-  ` * [new branch]      dev -> dev`</details>  
+  ` * [new branch]      dev -> dev`</details>
 
 ###### Browser - GitLab:
 See your new dev branch on GitLab (it should be there, refresh the tab if you don't see it. If you still don't see it, let me know and we'll trouble shoot)
@@ -285,7 +285,7 @@ Git merging can be done both locally via the command line, or remotely using a `
 
 ***
 
-#### Part 5 - Get the Latest Remote Version of Dev, Locally
+#### Part 5 - Get the Latest Remote Version of `dev`, Locally
 ###### Command line:
 - `git checkout dev` (Notice: no `-b`)
 
@@ -311,11 +311,7 @@ Git merging can be done both locally via the command line, or remotely using a `
     ` * branch            master     -> FETCH_HEAD`
     `Already up-to-date.`</details>  
 
-- `git push origin dev` (this should also come back as clean - since we have changed nothing in our code), it is good to get in the habit of checking yourself often!  
-
- - <details><summary>Example output</summary>
-   `Everything up-to-date`
-   </details>
+- `git push origin dev` (this should also come back as `Everything up-to-date` - since we have changed nothing in our code), it is good to get in the habit of checking yourself often!  
 
 ###### Command line Merge :
 See the [git documentation](https://git-scm.com/docs/git-merge) for more information on the `merge` command! Now that we are sure everything is up-to-date, let's actually do our merge!
@@ -343,7 +339,7 @@ Now you should check your `master` branch on GitLab and in Atom to see that expe
   - `git checkout -b color-updates`
 
 
-  ** GOTCHA:** Branches can be created off any other branch. Be sure you are on the branch that you want to branch off of before creating a new branch!
+  **GOTCHA:** Branches can be created off any other branch. Be sure you are on the branch that you want to branch off of before creating a new branch!
 
 ###### Atom - index.html:
 - You probably noticed that index.html had a typo! On (or around) line 19 `class="pr"` should actually be `class="price"`.
@@ -426,7 +422,7 @@ There was an error! The price of Happy Fun Ball is supposed to be $24.95, not $1
 - `git pull origin dev` (this should come back clean, but it is good practice to pull before pushing)
 - `git push origin price-fix` to create a new branch on GitLab
 
-** GOTCHA:**  Branches can be created off any other branch. Be sure you are on the branch that you want to branch off of before creating a new branch!
+**GOTCHA:**  Branches can be created off any other branch. Be sure you are on the branch that you want to branch off of before creating a new branch!
 
 ***
 ### Merging Our New Feature into the Dev branch
@@ -525,8 +521,7 @@ Which is ALL of this:
 
 ###### Atom index.html/main.css :
 - Take the time to review that the changes to the dev branch that you wanted are there and there are no errors or bugs
-- **Only working code should ever be merged to master!**
-
+- **Only working code should ever be merged to master!**  
 - If everything is ok, go ahead and merge the changes to master
 - If you made changes, don't forget to
 - `git add` and
