@@ -214,9 +214,6 @@ In general it is best practice to make a new branch for each bug you are fixing 
   - ![git branch output](/img/git_branch.png)
 
 - `git checkout -b link-files` - this will create a new branch (a copy of the branch we are switching from, in this case: `dev`) called `link-files` and check it out
-<details><summary>Example output:</summary>
-` Switched to a new branch link-files `
-</details>
 
 ***
 
@@ -255,7 +252,7 @@ In general it is best practice to make a new branch for each bug you are fixing 
 ***
 
 #### Part 4 - Merge New Feature into Dev Branch via GitLab
-Git merging can be done both locally via the command line, or remotely using a `merge request` via GitLab (Note: a `merge request` on GitLab is equivalent to a `pull request` on GitHub, both are completing a merge of branches!). When working by yourself, when you have full permissions to all project branches, you will likely use the terminal to conduct your merges. When working on a collaboration project, where usually only a select group of people (like your Team Leader) have permission to merge into production branches, you will more often initiate a merge via GitLab and a `merge request`!  Let's start with the `merge request` method!
+Git merging can be done both locally via the command line, or remotely using a `merge request` via GitLab (Note: a `merge request` on GitLab is equivalent to a `pull request` on GitHub, both are completing a merge of branches!). When working by yourself, when you have full permissions to all project branches, you will likely use the terminal to conduct your merges. When working on a collaboration project, where usually only a select group of people (like your Team Leader) have permission to merge into production branches, you will more often initiate a merge via a GitLab `merge request`!  Let's start with the `merge request` method!
 
 
 ###### Browser - GitLab:
@@ -284,7 +281,7 @@ Git merging can be done both locally via the command line, or remotely using a `
 
  **Note:** You can refuse a merge and close the merge request by pressing the grey `Close merge request` button further down
 
- **Note:** After a successful merge, click the `Remove Source Branch` button to remove branches from the repo that are single feature branches. (i.e. you wouldn't ever remove the `dev` branch)
+ **Note:** After a successful merge, click the `Remove Source Branch` button to remove branches from the repo that are single feature branches. (i.e. you wouldn't ever remove the `dev` branch but might remove the `link-files` branch right away)
 
 ***
 
@@ -294,8 +291,9 @@ Git merging can be done both locally via the command line, or remotely using a `
 
 - `git pull origin dev`
 
-- Check Atom (`index.html` has the link to CSS)
-- Your browser view (`index.html` is displaying with CSS loaded - don't forget to `CTRL-R`/refresh your browser to be sure you are seeing the updated version)
+- Check Atom (`index.html` has the link to CSS)  
+
+- Your browser view (`index.html` is displaying with CSS loaded - don't forget to `CTRL-R`/refresh your browser to be sure you are seeing the updated version)  
 
 - If everything looks good, let's merge these changes into the master branch using the terminal! **Note:** This is somewhat unrealistic... sorry. In an actual project you would likely use the Terminal to merge your feature branch (`link-files`) to your development branch (`dev`), because the permissions for these branches would be less restrictive, and then you would likely have to request permissions to merge the *tested and error free* development branch via a `merge request` on GitLab to send changes into the master branch for production.
 
@@ -303,17 +301,18 @@ Git merging can be done both locally via the command line, or remotely using a `
 
 #### Part 6 - Merge Dev Branch into Master via Terminal
 ###### Command line Double-Check:
-- `git branch`: ensure you are on the `dev` branch (`git checkout dev` if *NOT*)
+- `git branch`: ensure you are on the `dev` branch (`git checkout dev` if *NOT*)  
 
-- `git pull origin master`: pulls any changes from origin (gitlab.cs.usna.edu) master (Your master branch in your project on GitLab) into your current branch (`dev`)
+- `git pull origin master`: pulls any changes from origin (gitlab.cs.usna.edu) master (your master branch in origin) into your current local branch (`dev`)
 
-  - This should come back with "Already up-to-date" but it is a good habit to pull any updates from `master` since creating your branch of `dev` before you try and merge the `dev` branch back into `master`! **Please ask me for clarification if this doesn't make sense!**
+  - This should come back with "Already up-to-date" but it is a good habit to pull from `master` to receive changes since you created your `dev` branch, especially before you try and merge the `dev` branch back into `master` in an effort to avoid merge conflicts in your `merge request`! **Please ask me for clarification if this doesn't make sense!**  
+
   - <details><summary>Example output</summary>`From gitlab.cs.usna.edu:taylorpaul/branch_and_merge_exercise`  
     ` * branch            master     -> FETCH_HEAD`
-    `Already up-to-date.`</details>
+    `Already up-to-date.`</details>  
 
+- `git push origin dev` (this should also come back as clean - since we have changed nothing in our code), it is good to get in the habit of checking yourself often!  
 
-- `git push origin dev` (this should also come back as clean - since we have changed nothing in our code), it is good to get in the habit of checking yourself often!
  - <details><summary>Example output</summary>
    `Everything up-to-date`
    </details>
