@@ -128,15 +128,17 @@ As a professional developer, you will do whatever it takes to finish this projec
 
   - `git status`  
 
-    <details><summary>Click for example terminal output</summary>
-        `On branch master`<br>
-        `Your branch is up-to-date with 'origin/master'.`<br> `nothing to commit, working tree clean`</details>  
+    - <details><summary>Click for example terminal output</summary>
+        `On branch master`  
+        `Your branch is up-to-date with 'origin/master'.`  
+        `nothing to commit, working tree clean`</details>  
 
   - `git remote -v` - to check your remote set up   
 
-  <details><summary>Click for example terminal output</summary>  
-  `origin    git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (fetch)`  
-   `origin    git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (push)`</details>
+    -  <details><summary>Click for example terminal output</summary>  
+  `origin git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (fetch)`  
+   `origin git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (push)`</details>  
+
 ---
 
 #### Part 2 - Make a Dev Branch
