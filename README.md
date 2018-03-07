@@ -215,7 +215,7 @@ In general it is best practice to make a new branch for each bug you are fixing 
 
 - `git checkout -b link-files` - this will create a new branch (a copy of the branch we are switching from, in this case: `dev`) called `link-files` and check it out
 <details><summary>Example output:</summary>
-`Switched to a new branch 'link-files'`
+`Switched to a new branch 'link-files' `
 </details>
 
 ***
