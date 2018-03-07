@@ -273,12 +273,14 @@ See the [git documentation](https://git-scm.com/docs/git-merge) for more informa
 - Check Atom (`index.html` has the link to CSS)
 - Your browser view (`index.html` is displaying with CSS loaded - don't forget to `CTRL-R`/refresh your browser to be sure you are seeing the updated version)
 
-- If everything looks good, let's merge these changes into the master branch
+- If everything looks good, let's merge these changes into the master branch using the terminal! **Note:** This is somewhat unrealistic... sorry. In an actual project you would likely use the Terminal to merge your feature branch (`link-files`) to your development branch (`dev`), because the permissions for these branches would be less restrictive, and then you would likely have to request permissions to merge the *tested and error free* development branch via a `merge request` on GitLab to send changes into the master branch for production.
 
-#### Part 6 - Merge Dev Branch into Master via GitLab
+***
+
+#### Part 6 - Merge Dev Branch into Master via Terminal
 ###### Command line:
-
-- `git pull origin master` (this should come back as clean but it is a good habit to pull before you push)
+- `git branch`: ensure you are on the `dev` branch (`git checkout dev` if *NOT*)
+- `git pull origin master` (this should come back as clean but it is a good habit to pull any updates from `master` since your branch of `dev` before you try and merge the `dev` branch back into `master`)
 <details><summary>Example output</summary>
 `From gitlab.cs.usna.edu:taylorpaul/branch_and_merge_exercise`<br>
 ` * branch            master     -> FETCH_HEAD` <br>
