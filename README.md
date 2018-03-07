@@ -61,7 +61,7 @@ If you think back to past projects without git, when you wanted to implement som
 [Git's about page has 4 great reasons why it works so well for individuals and large teams.](https://git-scm.com/about)
 
 - Frictionless Context Switching - Switch between branches, whenever! No worries!
-- Role-Based code lines - Have many versions of your code - Production, Development, Day-to-Day etc.
+- Role-Based Codelines - Have many versions of your code - Production, Development, Day-to-Day etc.
 - Feature Based Workflow - Create a new branch for each feature
 - Disposable Experimentation - if a branch doesn't work out, you can just walk away or toss it. It has no impact on the working code
 
@@ -98,20 +98,19 @@ As a professional developer, you will do whatever it takes to finish this projec
 #### Part 1 - Get the files
 ###### Browser - GitLab:
 - Fork Happy-Fun-Ball (make a copy of this remote repository to your GitLab account):
-  - [Go here]( http://gitlab.cs.usna.edu/taylorpaul/branch_and_merge_exercise) and click `fork` (upper left) to fork it to your personal repo (Don't worry! You can delete it after the lesson if you can't stand clutter!)  
-
-    - ![Fork on GitLab](img/gitlab_fork.png)
+  - [Go here]( http://gitlab.cs.usna.edu/taylorpaul/branch_and_merge_exercise) and click `fork` (upper left) to fork it to your personal repo (Don't worry! You can delete it after the lesson if you can't stand clutter!)
+  - <details><summary> Click to see screenshot of `fork` button</summary>
+      ![Fork on GitLab](img/gitlab_fork.png)</details>
 - Navigate to **YOUR** version on **YOUR** GitLab *branch_and_merge_exercise* repo
 - Click the *Copy URL to clipboard* button (on the right, beside `fork`)
-
-  - ![Copy button](img/gitlab_clone_url.png)
-
+  - <details><summary> Click to see screenshot of *Copy URL to clipboard* button</summary>
+  ![Copy button](img/gitlab_clone_url.png)</details>
   - This will give you the option to copy the link to your clipboard and make it ready to paste in the command line.
 - REMEMBER: This should be from YOUR repo (the link to be copied should be `git@GitLab.com:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git`)
 
 ###### Command line:
 - Navigate to a directory **OUTSIDE** of any other git directories where you would liek to clone the *branch_and_merge_exercise* repo
-- Run this command in your terminal: ```$git clone `git@GitLab.com:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git` ``` (use `CTRL-V` to paste the URL from GitLab)
+- Run this command in your terminal: ```$git clone `git@GitLab.com:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git` ``` (use `CTRL-V` to paste the url from GitLab)
 - The above command should create a new folder inside your current directory and make copy of everything in the Happy Fun Ball (branch_and_merge_exercise) remote repository, locally (on your computer) and initialize a new local git repository.
  Let's check:
   - `cd branch_and_merge_exercise` into the cloned directory and then
@@ -139,24 +138,26 @@ To make a new branch AND checkout the new branch (we will call our new branch 'd
 `On branch dev` <br>
 `nothing to commit, working tree clean`
 </details>
-- Now let's push this *new* local branch `dev` to your remote repo on GitLab:
+- Now let's push this local branch `dev` to your remote repo on GitLab:
   - `git push origin dev`<details><summary>Example output</summary>
   ` * [new branch]      dev -> dev`</details>
 
 ###### Browser - GitLab:
-- See your new dev branch on GitLab (it should be there, refresh the tab if you don't see it. If you still don't see it, let me know and we'll trouble shoot)
-You will see a a new message along the top of GitLab and can also see the new change from clicking the drop-down arrow next to *master*:
-  - ![pull-down menu](img/gitlab_dev_branch.png)
+- See your new branch on GitLab (it should be there, refresh the tab if you don't see it. If you still don't see it, let me know and we'll trouble shoot)
+It will be a new message along the top of GitLab OR from clicking the `Branch: master` button <details><summary> Screeshot </summary>
 
+![pull-down menu](https://i.imgur.com/oIptMUM.png)
+
+</details>
 
 ###### Command line:
 - `atom .`open the files in atom
-- `open index.html` open index.html in the browser (remember you can do `open i` and then press `tab` to autocomplete index.html)
-
-***
+- `open index.html`open index.html in the browser (remember you can do `open i` and then press `tab` to autocomplete index.html)
 
 #### Part 3 - Organize yourself
-We are going to be going between the browser, the command line and Atom frequently. Be sure you can work efficiently and effectively by setting up a good workflow! Start by organizing your browser, command line and Atom so that you can easily switch between them. Close extra tabs and browser windows.   
+We are going to be going between the browser, the command line and Atom frequently. Be sure you can work efficiently and effectively by setting up a good workflow! Start by organizing your browser, command line and Atom so that you can easily switch between them (don't forget to use Spectacle). Close extra tabs and browser windows.  <details><summary> Here is how I worked on this project(You will have to also account for Zoom and Slack): </summary>
+
+![window organization](https://i.imgur.com/WAUMTBR.png)
 
 **Browser:**
 - My repo
@@ -167,7 +168,7 @@ We are going to be going between the browser, the command line and Atom frequent
 
 **Atom:**
 - directory tree (toggle view: `CTRL-\`).
-  -  See all Atom shortcuts : `CTRL-SHIFT-P` and type what you want to do!
+  -  See all Atom shortcuts : `CTRL-⇧P`
 - index.html
 -  main.css
 
@@ -175,28 +176,26 @@ We are going to be going between the browser, the command line and Atom frequent
 
 Take a couple minutes to get familiar with the code you'll be working on.
 
-***
-
 ### New Feature - Link the HTML and CSS
 Your first new feature!  Working in `index.html`, you will add a link to `main.css`, then you will merge it into the dev branch, and then into master.
 
-#### Part 1 - Make a New Feature Branch off of `dev`
-In general it is best practice to make a new branch for each bug you are fixing or feature you are adding in a git-based project. This prevents multiple editors (Did I mention some [projects](https://github.com/tensorflow/tensorflow) have tens of thousands of commits and more than 1,000 contributors?) from stepping on each other's toes and creating unnecessary *and dreaded* merge conflicts! Let's emulate the pro's here and do the same for our simple project. We will create a [second layer branch](http://i1.kym-cdn.com/photos/images/newsfeed/000/531/557/a88.jpg) from our already created `dev` branch and treat our `master` branch as the branch for production ready code!
-
+#### Part 4 - Make a New Branch
 ###### Command line:
 - Let's make a new branch specifically for our new feature
-- `git branch` - to check that you are on the `dev` branch. This command will show all the branches and highlight the one you are on.
+- `git branch` - to check that you are on the `dev` branch. This command will show all the branches and highlight the one you are on. <details><summary>Example output:</summary>
 
-  - ![git branch output](/img/git_branch.png)
+ ![example output of `git branch`](https://i.imgur.com/2bKy3zL.png)
+
+</details>
+
 
 - `git checkout -b link-files` - this will create a new branch (a copy of the branch we are switching from, in this case: `dev`) called `link-files` and check it out
 <details><summary>Example output:</summary>
 `Switched to a new branch 'link-files'`
+
 </details>
 
-***
-
-#### Part 2 - Work on New Feature
+#### Part 5 - Work on New Feature
 ###### Atom - index.html :
 - In the index.html - between the` </title>` and `</head>` tags, let's insert a link to our css :
 - `<link rel="stylesheet" href="main.css">`
@@ -263,7 +262,7 @@ See the [git documentation](https://git-scm.com/docs/git-merge) for more informa
 
  **Note:** After a successful merge, click the `Remove Source Branch` button to remove branches from the repo that are single feature branches. (i.e. you wouldn't ever remove the `dev` branch)
 
-#### Part 5 - Get the Latest Remote Version of Dev, Locally
+#### Part 8 - Get the Latest Remote Version of Dev, Locally
 ###### Command line:
 - `git checkout dev` (Notice: no `-b`)
 - `git pull origin dev`
@@ -306,7 +305,7 @@ See the [git documentation](https://git-scm.com/docs/git-merge) for more informa
 
 ###### Atom/Browser
 - Check to make sure everything has updated as expected (`index.html` has link to css and when you refresh the browser, the CSS still loads)
-***
+
 ### New Feature - Update the colors
  Work on a new feature: Working in the `main.css` file, you will update the colors of the Happy Fun Ball web page
 
@@ -368,7 +367,7 @@ Go through atom and the browser to see that your changes have come back
 - make your changes (we are changing the color of elements with the class of `price`)
 - `CTRL-S` -Don't forget to save your file
 - Refresh your browser to see your changes
-***
+
 ### Starting on a New Feature When We Haven't Finished Our Previous One
 There was an error! The price of Happy Fun Ball is supposed to be $24.95, not $14.95!
 <br>
@@ -402,7 +401,7 @@ Let's make a new branch off of the dev branch to hotfix this major problem! **
 - `git push origin price-fix` to create a new branch on GitLab
 
 ** GOTCHA:  Branches can be created off any other branch. Be sure you are on the branch that you want to branch off of before creating a new branch!
-***
+
 ### Merging Our New Feature into the Dev branch
 ###### Browser - GitLab:
 - See our new branch (either a message will pop up or use the left side pull down to see) <details><summary>Screenshot</summary>![GitLab screenshot](https://i.imgur.com/mgEzi40.png)
@@ -419,7 +418,7 @@ Let's make a new branch off of the dev branch to hotfix this major problem! **
 - `merge pull request` button, wait a moment, then go ahead and confirm the merge! (Note: when you work on a team, it is unlikely that you would merge your own pull requests)
 <details><summary>Screenshot</summary>![Merge Pull Request message and button](https://i.imgur.com/2yUuGmq.png)
 </details>
-***
+
 ### Going Back to Our Updated Colors Feature
 - Whew! That was exciting! It's nice to be back to working on this feature. We know there were changes to the `dev` branch, so let's get them
 
@@ -442,7 +441,7 @@ ERROR! Merge conflict! Example output:
 `Automatic merge failed; fix conflicts and then commit the result.`
 
 **Uh-oh...**
-***
+
 ### Merge Conflict (and Resolution)!
 
 ###### Atom - index.html :
@@ -485,7 +484,7 @@ Note: your numbers/letters after the `>>>>>>>` should be different
 
 - We fixed it! Now we can continue working on our project
 
-***
+
 ### Finishing and Merging Your Color Updates
 
 ###### Atom main.csss:
@@ -529,13 +528,13 @@ Note: your numbers/letters after the `>>>>>>>` should be different
 - Merge Pull Request
 - Confirm Pull Request
 - Check to see that your changes have been successfully made to the master branch
-***
+
 ### Hungry for More?
 - Make a new branch, continue to update the Happy Fun Ball web page, and merge back your changes (New Feature Ideas: change color of Happy Fun Ball. Add a google font. Add some js/jQuery to show/hide Happy Fun Ball's Warnings.)
 - Research and try `git stash`
 - Delete a branch locally and remotely :
-  - Remotely: `git push origin --delete branch_name`
-  - Locally: `git branch -d branch_name`
+  - `git push origin --delete branch_name`
+  - `git branch -d branch_name`
 
 
 ### Sudden and Permanent Shut Down of Wacky Products Incorporated
