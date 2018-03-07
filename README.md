@@ -411,7 +411,7 @@ There was an error! The price of Happy Fun Ball is supposed to be $24.95, not $1
 - See our new branch
 - Follow the instructions provided previously for creating a new `merge request`
 - Wait a moment to let GitLab tell you if there are any merge conflicts
-- All clear! Go ahead and press the `Merge` button (Note: when you work on a team, it is unlikely that you would merge your own pull requests)
+- All clear! Go ahead and press the `Merge` button (Note: when you work on a team, it is unlikely that you would accept your own merge requests)
 
 ***
 
@@ -494,12 +494,7 @@ Which is ALL of this:
 - `git push origin color-updates`
 
 ###### Browser - GitLab :
-- Pull Request
-- Compare `base: dev` to `compare: color-updates`
-- Wait to be sure there are no conflicts
-- Create Pull Request
-- Merge Pull Request
-- Confirm Pull Request
+- Complete the steps covered previously to submit and accept a `merge request` via GitLab
 
 ###### Command line:
 - `git checkout dev`
