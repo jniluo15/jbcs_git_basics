@@ -100,11 +100,11 @@ As a professional developer, you will do whatever it takes to finish this projec
 - Fork Happy-Fun-Ball (make a copy of this remote repository to your GitLab account):
   - [Go here]( http://gitlab.cs.usna.edu/taylorpaul/branch_and_merge_exercise) and click `fork` (upper left) to fork it to your personal repo (Don't worry! You can delete it after the lesson if you can't stand clutter!)  
 
-  ![Fork on GitLab](img/gitlab_fork.png)
+    - ![Fork on GitLab](img/gitlab_fork.png)
 - Navigate to **YOUR** version on **YOUR** GitLab *branch_and_merge_exercise* repo
 - Click the *Copy URL to clipboard* button (on the right, beside `fork`)
 
-    ![Copy button](img/gitlab_clone_url.png)
+  - ![Copy button](img/gitlab_clone_url.png)
 
   - This will give you the option to copy the link to your clipboard and make it ready to paste in the command line.
 - REMEMBER: This should be from YOUR repo (the link to be copied should be `git@GitLab.com:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git`)
@@ -146,7 +146,7 @@ To make a new branch AND checkout the new branch (we will call our new branch 'd
 ###### Browser - GitLab:
 - See your new dev branch on GitLab (it should be there, refresh the tab if you don't see it. If you still don't see it, let me know and we'll trouble shoot)
 You will see a a new message along the top of GitLab and can also see the new change from clicking the drop-down arrow next to *master*:
-![pull-down menu](img/gitlab_dev_branch.png)
+  - ![pull-down menu](img/gitlab_dev_branch.png)
 
 
 ###### Command line:
@@ -192,8 +192,9 @@ In general it is best practice to make a new branch for each bug you are fixing 
 - `git checkout -b link-files` - this will create a new branch (a copy of the branch we are switching from, in this case: `dev`) called `link-files` and check it out
 <details><summary>Example output:</summary>
 `Switched to a new branch 'link-files'`
-
 </details>
+
+***
 
 #### Part 2 - Work on New Feature
 ###### Atom - index.html :
