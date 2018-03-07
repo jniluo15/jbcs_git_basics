@@ -61,7 +61,7 @@ If you think back to past projects without git, when you wanted to implement som
 [Git's about page has 4 great reasons why it works so well for individuals and large teams.](https://git-scm.com/about)
 
 - Frictionless Context Switching - Switch between branches, whenever! No worries!
-- Role-Based Codelines - Have many versions of your code - Production, Development, Day-to-Day etc.
+- Role-Based code lines - Have many versions of your code - Production, Development, Day-to-Day etc.
 - Feature Based Workflow - Create a new branch for each feature
 - Disposable Experimentation - if a branch doesn't work out, you can just walk away or toss it. It has no impact on the working code
 
@@ -110,7 +110,7 @@ As a professional developer, you will do whatever it takes to finish this projec
 
 ###### Command line:
 - Navigate to a directory **OUTSIDE** of any other git directories where you would liek to clone the *branch_and_merge_exercise* repo
-- Run this command in your terminal: ```$git clone `git@GitLab.com:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git` ``` (use `CTRL-V` to paste the url from GitLab)
+- Run this command in your terminal: ```$git clone `git@GitLab.com:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git` ``` (use `CTRL-V` to paste the URL from GitLab)
 - The above command should create a new folder inside your current directory and make copy of everything in the Happy Fun Ball (branch_and_merge_exercise) remote repository, locally (on your computer) and initialize a new local git repository.
  Let's check:
   - `cd branch_and_merge_exercise` into the cloned directory and then
@@ -144,13 +144,13 @@ To make a new branch AND checkout the new branch (we will call our new branch 'd
 
 ###### Browser - GitLab:
 - See your new dev branch on GitLab (it should be there, refresh the tab if you don't see it. If you still don't see it, let me know and we'll trouble shoot)
-You will see a a new message along the top of GitLab and can also see the new change from clicking the drop-down arrow next to *master* <details><summary> Screeshot </summary>
+You will see a a new message along the top of GitLab and can also see the new change from clicking the drop-down arrow next to *master* <details><summary> Screenshot </summary>
 ![pull-down menu](img/gitlab_dev_branch.png)
 </details>
 
 ###### Command line:
 - `atom .`open the files in atom
-- `open index.html`open index.html in the browser (remember you can do `open i` and then press `tab` to autocomplete index.html)
+- `open index.html` open index.html in the browser (remember you can do `open i` and then press `tab` to autocomplete index.html)
 
 ***
 
@@ -174,17 +174,20 @@ We are going to be going between the browser, the command line and Atom frequent
 </details>
 
 Take a couple minutes to get familiar with the code you'll be working on.
+
 ***
+
 ### New Feature - Link the HTML and CSS
 Your first new feature!  Working in `index.html`, you will add a link to `main.css`, then you will merge it into the dev branch, and then into master.
 
-#### Part 1 - Make a New Branch
-In general it is best practice to make a new branch for each bug you are fixing or feature you are adding in a git-based project. This prevents multiple editors (Did I mention some [projects](https://github.com/tensorflow/tensorflow) have tens of thousands of commits and more than 1,000 contributers?) from stepping on eachother's toes and creating unnecessary *and dreaded* merge conflicts! Let's emulate the pro's here and do the same for our simple project. We will branch from our already create `dev` branch and treat our `master` branch as the branch for production ready code!
+#### Part 1 - Make a New Feature Branch off of `dev`
+In general it is best practice to make a new branch for each bug you are fixing or feature you are adding in a git-based project. This prevents multiple editors (Did I mention some [projects](https://github.com/tensorflow/tensorflow) have tens of thousands of commits and more than 1,000 contributors?) from stepping on each other's toes and creating unnecessary *and dreaded* merge conflicts! Let's emulate the pro's here and do the same for our simple project. We will create a [second layer branch](http://i1.kym-cdn.com/photos/images/newsfeed/000/531/557/a88.jpg) from our already created `dev` branch and treat our `master` branch as the branch for production ready code!
 
 ###### Command line:
 - Let's make a new branch specifically for our new feature
-- `git branch` - to check that you are on the `dev` branch. This command will show all the branches and highlight the one you are on. <details><summary>Example output:</summary> ![example output of `git branch`](https://i.imgur.com/2bKy3zL.png)</details>
+- `git branch` - to check that you are on the `dev` branch. This command will show all the branches and highlight the one you are on.
 
+  - ![git branch output](/img/git_branch.png)
 
 - `git checkout -b link-files` - this will create a new branch (a copy of the branch we are switching from, in this case: `dev`) called `link-files` and check it out
 <details><summary>Example output:</summary>
