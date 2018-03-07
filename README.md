@@ -111,7 +111,7 @@ As a professional developer, you will do whatever it takes to finish this projec
 - REMEMBER: This should be from YOUR repo (the link to be copied should be `git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git`)
 
 ###### Command line:
-- Navigate to a directory **OUTSIDE** of any other git directories where you would liek to clone the *branch_and_merge_exercise* repo  
+- Navigate to a directory **OUTSIDE** of any other git directories where you would like to clone the *branch_and_merge_exercise* repo  
 
 - Run this command in your terminal: ```$git clone `git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git` ``` (use `CTRL-V` to paste the URL from GitLab)  
 
@@ -323,6 +323,7 @@ See the [git documentation](https://git-scm.com/docs/git-merge) for more informa
   `Fast-forward`  
   `index.html | 16 ++++++++++++++`  
   `1 file changed, 1 insertions(+), 1 deletions(-)`  
+- `git push origin master` (in order to send our changes to the remote: GitLab)
 
 Now you should check your `master` branch on GitLab and in Atom to see that expected changes are present! Refresh your browser and you should see CSS applied to `index.html`!
 
@@ -388,8 +389,10 @@ Go through atom and the browser to see that your changes have come back
 - `esc` to close the find/replace tab
 - make your changes (we are changing the color of elements with the class of `price`)
 - `CTRL-S` -Don't forget to save your file
-- Refresh your browser to see your changes
-***
+- Refresh your browser to see your changes  
+
+***  
+
 ### Starting on a New Feature When We Haven't Finished Our Previous One
 There was an error! The price of Happy Fun Ball is supposed to be $24.95, not $14.95!
 <br>
