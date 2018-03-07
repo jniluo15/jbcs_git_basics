@@ -263,6 +263,8 @@ See the [git documentation](https://git-scm.com/docs/git-merge) for more informa
 
  **Note:** After a successful merge, click the `Remove Source Branch` button to remove branches from the repo that are single feature branches. (i.e. you wouldn't ever remove the `dev` branch)
 
+***
+
 #### Part 5 - Get the Latest Remote Version of Dev, Locally
 ###### Command line:
 - `git checkout dev` (Notice: no `-b`)
