@@ -2,12 +2,12 @@
 
 ## A Lesson on Git Branches and Merging
 ### Citations
-This repository is a fork of GitHub User Krafalski's [hfb repository](https://github.com/Krafalski/hfb). Capt Taylor Paul made the original modification to port the repository and exercise to GitLab.
+This repository is a secondary fork of GitHub User Krafalski's [hfb repository](https://github.com/Krafalski/hfb). Capt Taylor Paul made the original fork and modifed it for our GitLab and his courses.  I have forked it from Capt Paul for IC470.
 
 ### Lesson Objectives
 _After this lesson, students will be able to:_
 
-- Explain how git's version control allows developers to work differently on projects
+- Explain how git's version control allows developers to work simultaneously on projects
 - Explain what a git branch is
 - Make a git branch
 - Switch between branches
@@ -15,9 +15,9 @@ _After this lesson, students will be able to:_
 - Resolve a merge conflict
 
 ### Git Refresher
-So far, you have been using git to get code (pull) from a remote repository (on GitLab), writing your own code, tracking it with git, and moving (push) the code from your computer (local version) to GitLab.
+So far, you have seen git used to retreive files (pull) from a remote repository (on GitLab), tracking changes to files with git, and send files (push) from your computer (local version) to GitLab.
 
-When using git locally (on your computer), you have been running the commands in Terminal (Command line).
+When using git locally (on your computer), the commands are run from the Terminal (Command line).
 
 A `git` command has a minimum of 1 argument.
 
@@ -34,7 +34,7 @@ The second(+) argument gives the first argument context (when needed)
 Lastly, flags can be added
 - `git remote -v` (git show remote(s) and be verbose(give more detail))
 
-Here is a table of our commonly used git commands that we've used in this course so far:
+Here is a table of commonly used git commands:
 
 | git | Argument | Flag(s)/Additional arguments | Description |
 |:---:|:-----------:|:-------:|:-----------:|
@@ -98,15 +98,21 @@ As a professional developer, you will do whatever it takes to finish this projec
 #### Part 1 - Get the files
 ###### Browser - GitLab:
 - Fork Happy-Fun-Ball (make a copy of this remote repository to your GitLab account):  
-  - [Go here]( http://gitlab.cs.usna.edu/taylorpaul/branch_and_merge_exercise) and click `fork` (upper left) to fork it to your personal repo (Don't worry! You can delete it after the lesson if you can't stand clutter!)  
+  - [Go here]( http://gitlab.cs.usna.edu/ic470/branch_and_merge_exercise) and click `fork` and select the icon for YOUR-GITLAB-HANDLE to fork it to your personal repo.  
     - ![Fork on GitLab](img/gitlab_fork.png)  
 
-- Navigate to **YOUR** version on **YOUR** GitLab *branch_and_merge_exercise* repo  
+- Navigate to **YOUR** version on **YOUR** GitLab *branch_and_merge_exercise* repo
+    - The URL should look like: https://gitlab.usna.edu/YOUR-GITLAB-HANDLE/branch_and_merge_exercise/
 
-- Click the *Copy URL to clipboard* button (on the right, beside `fork`)  
+- Remove fork relationship
+    - In the left sidebar menu, click on Settings.
+    - In the Advanced section click on the "Expand" button.
+    - Scroll down and click on the "Remove fork relationship" button, and follow the instructions.
+
+- Go back to your project's home page, and click the *Copy URL to clipboard* button (on the right, beside `fork`)  
   - ![Copy button](img/gitlab_clone_url.png)
 
-  - This will give you the option to copy the link to your clipboard and make it ready to paste in the command line.  
+  - This will copy the link to your clipboard and make it ready to paste in the command line.  
 
 - REMEMBER: This should be from YOUR repo (the link to be copied should be `git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git`)
 
@@ -115,7 +121,7 @@ As a professional developer, you will do whatever it takes to finish this projec
 
 - Run this command in your terminal: ```$git clone `git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git` ``` (use `CTRL-V` to paste the URL from GitLab)  
 
-- The above command should create a new folder inside your current directory and make copy of everything in the Happy Fun Ball (branch_and_merge_exercise) remote repository, locally (on your computer) and initialize a new local git repository.
+- The above command should create a new folder inside your current directory with a copy of everything in the Happy Fun Ball (branch_and_merge_exercise) remote repository, locally (on your computer) and initialize a new local git repository.
  Let's check:  
 
   - `cd branch_and_merge_exercise` into the cloned directory and then  
@@ -129,15 +135,17 @@ As a professional developer, you will do whatever it takes to finish this projec
   - `git status`  
 
     - <details><summary>Click for example terminal output</summary>
-        `On branch master`  
-        `Your branch is up-to-date with 'origin/master'.`  
-        `nothing to commit, working tree clean`</details>  
+        <pre>  On branch master  
+        Your branch is up-to-date with 'origin/master'.<br>
+        nothing to commit, working tree clean</pre>
+    </details>  
 
   - `git remote -v` - to check your remote set up   
 
-    -  <details><summary>Click for example terminal output</summary>  
-  `origin git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (fetch)`  
-   `origin git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (push)`</details>  
+    - <details><summary>Click for example terminal output</summary>  
+        <pre>  origin git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (fetch)  
+        origin git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (push)</pre>
+    </details>  
 
 ---
 
@@ -147,8 +155,9 @@ To make a new branch AND checkout the new branch (we will call our new branch 'd
 
 - `git checkout -b dev`  
 
-  - <details><summary>Example output</summary>
-    `Switched to a new branch 'dev'`</details>
+    - <details><summary>Click for example terminal output</summary>
+        <pre>  Switched to a new branch 'dev'</pre>
+    </details>
 
 - `ls`  
 
@@ -156,40 +165,54 @@ To make a new branch AND checkout the new branch (we will call our new branch 'd
 
 - `git status` to confirm everything looks like it should  
 
-  - <details><summary>Example output</summary>
-    `On branch dev`  
-    `nothing to commit, working tree clean`</details>
+    - <details><summary>Click for example terminal output</summary>
+        <pre>  On branch dev
+        nothing to commit, working tree clean</pre>
+    </details>
 
 - Now let's push this *new* local branch `dev` to your remote repo on GitLab:    
 
   - `git push origin dev`
 
-    -  <details><summary>Example output</summary>
-  ` * [new branch]      dev -> dev`</details>
+    - <details><summary>Click for example terminal output</summary>
+        <pre>  You are accessing a U.S. Government (USG) Information System (IS)
+        ...
+        See User Agreement for details.
+        Total 0 (delta 0), reused 0 (delta 0)
+        remote:
+        remote: To create a merge request for dev, visit:
+        remote:   https://gitlab.usna.edu/YOUR-GITLAB-HANDLE/branch_and_merge_exercise/merge_requests/new?merge_request%5Bsource_branch%5D=dev
+        remote:
+        To gitlab.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git
+        * [new branch]      dev -> dev</pre>
+    </details>
 
 ###### Browser - GitLab:
-See your new dev branch on GitLab (it should be there, refresh the tab if you don't see it. If you still don't see it, let me know and we'll trouble shoot)
+Select your new dev branch on GitLab (it should be there, refresh the tab if you don't see it.)
 You will see a a new message along the top of GitLab and can also see the new change from clicking the drop-down arrow next to *master*:  
 
 ![pull-down menu](img/gitlab_dev_branch.png)
 
 
 ###### Command line:
-- `atom .` open the files in atom  
-
-- `open index.html` open index.html in the browser (remember you can do `open i` and then press `tab` to autocomplete index.html)
+- From the terminal in your project directory run `atom .` to open the project directory in atom
+- Use one of the two commands below to open index.html in your preferred browswer
+    - `google-chrome index.html &`
+    - `firefox index.html &`
 
 ***
 
 #### Part 3 - Organize yourself
-We are going to be going between the browser, the command line and Atom frequently. Be sure you can work efficiently and effectively by setting up a good workflow! Start by organizing your browser, command line and Atom so that you can easily switch between them. Close extra tabs and browser windows.   
+We are going to be going between the browser, the command line and Atom frequently. Be sure you can work efficiently and effectively by setting up a good workflow! Start by organizing your browser, terminal, and and Atom windows so that you can easily switch between them. Close extra tabs and browser windows.   
 
-**Browser:**
-- My repo
-- Happy Fun Ball `index.html`
-- README.md for this lesson
-- Color Names (we'll be referring to this a few times, there is a link below)
-- All other tabs are closed, no other Browser windows are open
+**Browser (4 tabs open):**
+- This page, that you're currently reading right now.
+    - The URL should be: https://gitlab.usna.edu/ic470/branch_and_merge_exercise/
+- Your repo (the fork you created) on gitlab.usna.edu.  
+    - The URL should look like: https://gitlab.usna.edu/YOUR-GITLAB-HANDLE/branch_and_merge_exercise/tree/dev
+- Happy Fun Ball `index.html` from your local file system
+- <a href=https://htmlcolorcodes.com/color-names/ target =_blank>Color Names</a>
+- All other tabs are closed, and no other Browser windows are open
 
 **Atom:**
 - directory tree (toggle view: `CTRL-\`).  
@@ -233,21 +256,37 @@ In general it is best practice to make a new branch for each bug you are fixing 
 
 ###### Command line:
 - `git status`
+    - <details><summary>Click for example terminal output</summary>
+        <pre>  On branch link-files
+        Changes not staged for commit:
+          (use "git add <file>..." to update what will be committed)
+          (use "git checkout -- <file>..." to discard changes in working directory)<br>
+                modified:   index.html<br>
+        no changes added to commit (use "git add" and/or "git commit -a")</pre>
+    </details>
 - `git add index.html`
 - `git commit -m 'index.html and main.css linked'`
-- `git push origin link-files`  (Remember: `origin`and `link-files` can be autocompeletd by using `tab`) <details><summary>Example output:</summary>
-`Counting objects: 3, done.`  
-`Delta compression using up to 12 threads.`  
-`Compressing objects: 100% (3/3), done.`  
-`Writing objects: 100% (3/3), 343 bytes | 0 bytes/s, done.`  
-`Total 3 (delta 2), reused 0 (delta 0)`  
-`remote:`  
-`remote: To create a merge request for link-files, visit:`  
-`remote:  `   `http://gitlab.cs.usna.edu/taylorpaul/branch_and_merge_exercise/merge_requests/new?merge_request%5Bsource_branch%5D=link-files`  
-`To git@gitlab.cs.usna.edu:taylorpaul/branch_and_merge_exercise.git`  
-` * [new branch]      link-files -> link-files`  
-</details>
-- Check GitLab to see that the new branch is there like we did above!
+    - <details><summary>Click for example terminal output</summary>
+        <pre>  [link-files 7c03f6a] index.html and main.css linked
+        1 file changed, 2 insertions(+), 2 deletions(-)</pre>
+    </details>
+- `git push origin link-files`  (Remember: `origin`and `link-files` can be autocompeletd by using `tab`)
+    - <details><summary>Click for example terminal output</summary>
+        <pre>  You are accessing a U.S. Government (USG) Information System (IS)
+        ...
+        See User Agreement for details.
+        Counting objects: 3, done.
+        Delta compression using up to 12 threads.
+        Compressing objects: 100% (3/3), done.
+        Writing objects: 100% (3/3), 348 bytes | 348.00 KiB/s, done.
+        Total 3 (delta 2), reused 0 (delta 0)
+        remote:
+        remote: To create a merge request for link-files, visit:
+        remote:  `   `http://gitlab.cs.usna.edu/YOUR-GITLAB-HANDLE/branch_and_merge_exercise/merge_requests/new?merge_request%5Bsource_branch%5D=link-files
+        To git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git
+        * [new branch]      link-files -> link-files</pre>
+    </details>
+- Check your repo on USNA GitLab to see that the new branch is there like we did above!
 
 ***
 
@@ -268,7 +307,8 @@ Git merging can be done both locally via the command line, or remotely using a `
   - ![Source branch](img/gitlab_merge_branches.png)
 
 
-- Go ahead and press the `Submit merge request` button, wait a moment and you should see a green `Merge` button about midway down the new page.
+- Go ahead and press the `Submit merge request` button, wait a moment and you should see a green `Merge` button about midway down the new page.  <br>
+<strong>Note:</strong> You may see a BLUE `Merge when pipeline succeeds` button with a dropdown arrow.  If you do, select the dropdown arrow and click on `Merge immediately`.
   - ![Merge with Checkbox](img/gitlab_merge.png)
 
 
@@ -281,7 +321,7 @@ Git merging can be done both locally via the command line, or remotely using a `
 
  **Note:** You can refuse a merge and close the merge request by pressing the grey `Close merge request` button further down
 
- **Note:** After a successful merge, click the `Remove Source Branch` button to remove branches from the repo that are single feature branches. (i.e. you wouldn't ever remove the `dev` branch but might remove the `link-files` branch right away)
+ **Note:** After a successful merge, click the `Remove Source Branch` button to remove branches from the repo that are single feature branches. (i.e. you wouldn't never remove the `dev` branch but might remove the `link-files` branch right away)
 
 ***
 
@@ -305,11 +345,13 @@ Git merging can be done both locally via the command line, or remotely using a `
 
 - `git pull origin master`: pulls any changes from origin (gitlab.cs.usna.edu) master (your master branch in origin) into your current local branch (`dev`)
 
-  - This should come back with "Already up-to-date" but it is a good habit to pull from `master` to receive changes since you created your `dev` branch, especially before you try and merge the `dev` branch back into `master` in an effort to avoid merge conflicts in your `merge request`! **Please ask me for clarification if this doesn't make sense!**  
+    - This should come back with "Already up-to-date" but it is a good habit to pull from `master` to receive changes since you created your `dev` branch, especially before you try and merge the `dev` branch back into `master` in an effort to avoid merge conflicts in your `merge request`!  
 
-  - <details><summary>Example output</summary>`From gitlab.cs.usna.edu:taylorpaul/branch_and_merge_exercise`  
-    ` * branch            master     -> FETCH_HEAD`
-    `Already up-to-date.`</details>  
+    - <details><summary>Click for example terminal output</summary>
+        <pre>  From gitlab.cs.usna.edu:taylorpaul/branch_and_merge_exercise
+        * branch            master     -> FETCH_HEAD
+        Already up-to-date.</pre>
+    </details>  
 
 - `git push origin dev` (this should also come back as `Everything up-to-date` - since we have changed nothing in our code), it is good to get in the habit of checking yourself often!  
 
@@ -318,11 +360,12 @@ See the [git documentation](https://git-scm.com/docs/git-merge) for more informa
 - `git checkout master` (Notice: no `-b`)
 - `git pull origin master` (again just in case, note this command now affects our local `master` branch ONLY!)
 - `git merge dev`
-  - <details><summary>Example output (Note: You might have different number of changes!)</summary>
-  `Updating b519be4..f8cd536`  
-  `Fast-forward`  
-  `index.html | 16 ++++++++++++++`  
-  `1 file changed, 1 insertions(+), 1 deletions(-)`  
+    - <details><summary>Click for example terminal output (Note: You might have different number of changes!)</summary>
+        <pre>  Updating b519be4..f8cd536
+        Fast-forward
+        index.html | 16 ++++++++++++++
+        1 file changed, 1 insertions(+), 1 deletions(-)</pre>
+    </details>
 - `git push origin master` (in order to send our changes to the remote: GitLab)
 
 Now you should check your `master` branch on GitLab and in Atom to see that expected changes are present! Refresh your browser and you should see CSS applied to `index.html`!
@@ -356,8 +399,7 @@ Now you should check your `master` branch on GitLab and in Atom to see that expe
 - Now let's update the colors in the `body`, let's change `color` (font color), and `background-color` to whatever our heart desires. [Go ahead and use hexadecimal colors, rgb, hsl or some of the standard web colors.]( http://htmlcolorcodes.com/color-names/)
 
 Make changes here in main.css ![main.css](img/main_css.png)
-- When we've found the colors we like, we can go ahead and
-- `CTRL-S/save`
+- When we've found the colors we like, we can go ahead and `CTRL-S/save`
 
 ###### Command line:
 - `git status` - see the status of our files
@@ -403,17 +445,20 @@ There was an error! The price of Happy Fun Ball is supposed to be $24.95, not $1
 - `git checkout dev`<br>
 - Oops! We forgot to `git add` & `git commit -m ""`!!
 
+You should see an error message that looks like:
+<pre>error: Your local changes to the following files would be overwritten by checkout:
+        main.css
+Please commit your changes or stash them before you switch branches.
+Aborting</pre>
 
-`error: Your local changes to the following files would be overwritten by checkout:` <br>
-	`main.css` <br>
-`Please commit your changes or stash them before you switch branches.` <br>
-`Aborting`
 - We will commit our changes (we will not cover `stash` today):
-- `git add main.css`
-- `git status`: just to be sure there weren't any other changes we made!
-- `git commit -m 'changed .price color'`
-- `git checkout dev`
-- `git checkout -b price-fix` to make a new branch off of dev (and automatically be switched to the new branch)
+    - `git add main.css`
+    - `git status`: just to be sure there weren't any other changes we made!
+    - `git commit -m 'changed .price color'`
+    - `git checkout dev`
+    - `git checkout -b price-fix` to make a new branch off of dev (and automatically be switched to the new branch)
+
+**GOTCHA:**  Branches can be created off any other branch. Be sure you are on the branch that you want to branch off of before creating a new branch!
 
 ###### Atom - index.hmtl:
 - Update the price of happy fun ball from `$14.95` to `$24.95` (~ line 19 of `index.html`)
@@ -425,7 +470,6 @@ There was an error! The price of Happy Fun Ball is supposed to be $24.95, not $1
 - `git pull origin dev` (this should come back clean, but it is good practice to pull before pushing)
 - `git push origin price-fix` to create a new branch on GitLab
 
-**GOTCHA:**  Branches can be created off any other branch. Be sure you are on the branch that you want to branch off of before creating a new branch!
 
 ***
 ### Merging Our New Feature into the Dev branch
@@ -434,6 +478,7 @@ There was an error! The price of Happy Fun Ball is supposed to be $24.95, not $1
 - Follow the instructions provided previously for creating a new `merge request`
 - Wait a moment to let GitLab tell you if there are any merge conflicts
 - All clear! Go ahead and press the `Merge` button (Note: when you work on a team, it is unlikely that you would accept your own merge requests)
+- After the merge is complete, go ahead and click the `Remove Source Branch` button for this single feature branch.
 
 ***
 
@@ -443,20 +488,21 @@ There was an error! The price of Happy Fun Ball is supposed to be $24.95, not $1
 ###### Command line:
 - `git checkout color-updates`
 - `git pull origin dev` - to pull down your changes from the remote to your local copy
+    - ERROR! Merge conflict! Example output:
 
+<pre>You are accessing a U.S. Government (USG) Information System (IS)
 ...
-
-...
-
-...
-
-ERROR! Merge conflict! Example output:
-
-`* branch            dev -> FETCH_HEAD`<br>
-`c1df4fd..cc1ba3e  dev        -> origin/dev`<br>
-`Auto-merging index.html` <br>
-`CONFLICT (content): Merge conflict in index.html`<br>
-`Automatic merge failed; fix conflicts and then commit the result.`
+See User Agreement for details.
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0)
+Unpacking objects: 100% (1/1), done.
+From gitlab.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise
+ * branch            dev        -> FETCH_HEAD
+   9366335..fe1a3cd  dev        -> origin/dev
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.</pre>
 
 **Uh-oh...**
 
@@ -466,7 +512,7 @@ ERROR! Merge conflict! Example output:
 
 ###### Atom - index.html :
 
-- View the conflict in Atom, the editor even gives you buttons for which change to keep! (Ours: Local, Theirs: Remote) **DON'T** use these buttons this time!
+- View the conflict in Atom.  You may need to close and re-open index.html.  The editor even gives you buttons for which change to keep! (Ours: Local, Theirs: Remote) **DON'T** use these buttons this time!
 
 ![index.html file](img/merge_conflict.png)
 
@@ -486,29 +532,42 @@ Which is ALL of this:
 
 *Note:* your numbers/letters after the `>>>>>>>` should be different
 - Let's also clean up any extra white space
-- `CTRL-S`
+- `CTRL-S`/save
 
 ###### Command line:
 - `git add index.html`
 - `git commit -m 'fixed merge conflict'`
-- `git push origin color-updates` <details><summary>Example output</summary>
-`Counting objects: 11, done.`<br>
-`Delta compression using up to 4 threads.`<br>
-`Compressing objects: 100% (11/11), done.` <br>
-`Writing objects: 100% (11/11), 1.05 KiB | 0 bytes/s, done.` <br>
-`Total 11 (delta 7), reused 0 (delta 0)`<br>
-`remote: Resolving deltas: 100% (7/7), completed with 3 local objects.`<br>
-`To https://gitlab.cs.usna.edu/YOUR-GITLAB-HANDLE/branch_and_merge_exercise`<br>
-` * [new branch]      color-updates -> color-updates`<br>
-</details>
+- `git push origin color-updates`
+    - <details><summary>Click for example terminal output</summary>
+        <pre>  You are accessing a U.S. Government (USG) Information System (IS)
+        ...
+        See User Agreement for details.  
+        Counting objects: 11, done.
+        Delta compression using up to 4 threads.
+        Compressing objects: 100% (11/11), done.
+        Writing objects: 100% (11/11), 1.05 KiB | 0 bytes/s, done.
+        Total 11 (delta 7), reused 0 (delta 0)
+        remote: Resolving deltas: 100% (7/7), completed with 3 local objects.
+        To https://gitlab.cs.usna.edu/YOUR-GITLAB-HANDLE/branch_and_merge_exercise
+        * [new branch]      color-updates -> color-updates</pre>
+    </details>
 
 - We fixed it! Now we can continue working on our project
 
 ***
 ### Finishing and Merging Your Color Updates
+###### Browser - index:
+- Observe the color changing behavior when you mouse over the orange ball.
 
-###### Atom main.csss:
+###### Atom - main.css:
 - Make your final updates to `main.css`
+    - In the #happy-fun-ball:hover section, change the four instances of the color `white` to `#ffcd8d` or something else except `white` or `orange`
+    - Optional - make any other changes you like.
+    - Save your changes
+
+###### Browser - index:
+- Observe the different colors when you mouse over the orange ball.
+- Make sure any other changes you made look the way you want.
 
 ###### Command line:
 - `git add main.css`
@@ -516,7 +575,8 @@ Which is ALL of this:
 - `git push origin color-updates`
 
 ###### Browser - GitLab :
-- Complete the steps covered previously to submit and accept a `merge request` via GitLab
+- Complete the steps covered previously to submit and accept a `merge request` via GitLab from the `color-updates` branch to the `dev` branch
+- After the merge is complete, go ahead and click the `Remove Source Branch` button for this single feature branch.
 
 ###### Command line:
 - `git checkout dev`
@@ -525,7 +585,7 @@ Which is ALL of this:
 ###### Atom index.html/main.css :
 - Take the time to review that the changes to the dev branch that you wanted are there and there are no errors or bugs
 - **Only working code should ever be merged to master!**  
-- If everything is ok, go ahead and merge the changes to master
+- If everything is ok, we are ready to merge the changes to master
 - If you made changes, don't forget to
 - `git add` and
 - `git commit -m ''`
@@ -535,8 +595,22 @@ Which is ALL of this:
 - `git push origin dev` (it is ok if git tells you that `Everything up-to-date`)
 
 ###### Browser - GitLab:
-- Follow the steps covered previously to submit and accept a `merge request`
+- In the left sidebar, click on `Merge Requests` and then click the green `New merge request` button.  
+- Select `dev` as the `Source branch` and `master` as the `Target branch` for your repository, and then click the `Compare branches and continue` button.
+- Then continue as you have done before to submit and accept this merge request.
 - Check to see that your changes have been successfully made to the master branch!
+- Because the dev branch is not a single feature update, your should NOT remove it.
+
+***
+
+
+### Deliverables!  aka: How to get credit for this Lab!
+- In the left sidebar menu, click on Repository, then click on Graph.
+- The graph will show all the changes, branching, and merging activity that you completed on the project for this lab.
+- Make sure the internal graph window is scrolled all the way to the top.
+- Print this page using your browser's print menu.
+- Put your name on the printout and turn it in to your instructor.
+
 
 ***
 
@@ -551,3 +625,12 @@ Which is ALL of this:
 
 ### Sudden and Permanent Shut Down of Wacky Products Incorporated
 - Well, it was fun while it lasted?
+
+
+***
+
+### Cleanup (Optional)
+- If you would like to delete this project from your GitLab Account, follow these steps:
+    - With your project open, in the left sidebar menu, click on Settings.
+    - In the Advanced section click on the "Expand" button.
+    - Scroll down and click on the "Remove project" button, and follow the instructions.
