@@ -2,7 +2,7 @@
 
 ## A Lesson on Git Branches and Merging
 ### Citations
-This repository is a secondary fork of GitHub User Krafalski's [hfb repository](https://github.com/Krafalski/hfb). Capt Taylor Paul made the original fork and modifed it for our GitLab and his courses.  I have forked it from Capt Paul for IC470.
+This repository is a secondary fork of GitHub User Krafalski's [hfb repository](https://github.com/Krafalski/hfb). Capt Taylor Paul made the original fork and modifed it for our GitLab and IT360.
 
 ### Lesson Objectives
 _After this lesson, students will be able to:_
