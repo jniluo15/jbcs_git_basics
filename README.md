@@ -2,7 +2,7 @@
 
 ## A Lesson on Git Branches and Merging
 ### Citations
-This repository is a secondary fork of GitHub User Krafalski's [hfb repository](https://github.com/Krafalski/hfb). Capt Taylor Paul made the original fork and modifed it for our GitLab and IT360.
+This repository is a secondary fork of GitHub User Krafalski's [hfb repository](https://github.com/Krafalski/hfb). Capt Taylor Paul made the original fork and modified it for the JBCS.
 
 ### Lesson Objectives
 _After this lesson, students will be able to:_
@@ -14,8 +14,15 @@ _After this lesson, students will be able to:_
 - Merge branches
 - Resolve a merge conflict
 
+### Gitting Started
+
+https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+
 ### Git Refresher
-So far, you have seen git used to retreive files (pull) from a remote repository (on GitLab), tracking changes to files with git, and send files (push) from your computer (local version) to GitLab.
+So far, you have seen git used to retrieve files (pull) from a remote repository (on GitLab), tracking changes to files with git, and send files (push) from your computer (local version) to GitLab.
 
 When using git locally (on your computer), the commands are run from the Terminal (Command line).
 
@@ -97,12 +104,12 @@ As a professional developer, you will do whatever it takes to finish this projec
 ### Setup
 #### Part 1 - Get the files
 ###### Browser - GitLab:
-- Fork Happy-Fun-Ball (make a copy of this remote repository to your GitLab account):  
-  - [Go here]( http://gitlab.cs.usna.edu/ic470/branch_and_merge_exercise) and click `fork` and select the icon for YOUR-GITLAB-HANDLE to fork it to your personal repo.  
+- Fork Happy-Fun-Ball (make a copy of this remote repository to your GitHub account):  
+  - [Go here](https://github.com/taylorpaul/jbcs_git_basics) and click `fork` to create a copy to your personal repo.  
     - ![Fork on GitLab](img/gitlab_fork.png)  
 
-- Navigate to **YOUR** version on **YOUR** GitLab *branch_and_merge_exercise* repo
-    - The URL should look like: https://gitlab.usna.edu/YOUR-GITLAB-HANDLE/branch_and_merge_exercise/
+- Navigate to **YOUR** version on **YOUR** GitHub *jbcs_git_basics* repo
+    - The URL should look like: https://github.com/YOUR-GITHUB-HANDLE/jbcs_git_basics/
 
 - Remove fork relationship
     - In the left sidebar menu, click on Settings.
@@ -114,17 +121,17 @@ As a professional developer, you will do whatever it takes to finish this projec
 
   - This will copy the link to your clipboard and make it ready to paste in the command line.  
 
-- REMEMBER: This should be from YOUR repo (the link to be copied should be `git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git`)
+- REMEMBER: This should be from YOUR repo (the link to be copied should be `git@github.com:YOUR-GITHUB-HANDLE/jbcs_git_basics.git`)
 
 ###### Command line:
-- Navigate to a directory **OUTSIDE** of any other git directories where you would like to clone the *branch_and_merge_exercise* repo  
+- Navigate to a directory **OUTSIDE** of any other git directories where you would like to clone the *jbcs_git_basics* repo  
 
-- Run this command in your terminal: ```$git clone `git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git` ``` (use `CTRL-V` to paste the URL from GitLab)  
+- Run this command in your terminal: ```$git clone `git@github.com:YOUR-GITHUB-HANDLE/jbcs_git_basics.git` ``` (use `CTRL-V` to paste the URL from GitLab)  
 
-- The above command should create a new folder inside your current directory with a copy of everything in the Happy Fun Ball (branch_and_merge_exercise) remote repository, locally (on your computer) and initialize a new local git repository.
+- The above command should create a new folder inside your current directory with a copy of everything in the Happy Fun Ball (jbcs_git_basics) remote repository, locally (on your computer) and initialize a new local git repository.
  Let's check:  
 
-  - `cd branch_and_merge_exercise` into the cloned directory and then  
+  - `cd jbcs_git_basics` into the cloned directory and then  
 
   - `ls` and check that  
 
@@ -143,8 +150,8 @@ As a professional developer, you will do whatever it takes to finish this projec
   - `git remote -v` - to check your remote set up   
 
     - <details><summary>Click for example terminal output</summary>  
-        <pre>  origin git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (fetch)  
-        origin git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git (push)</pre>
+        <pre>  origin git@github.com:YOUR-GITHUB-HANDLE/jbcs_git_basics.git (fetch)  
+        origin git@github.com:YOUR-GITHUB-HANDLE/jbcs_git_basics.git (push)</pre>
     </details>  
 
 ---
@@ -181,9 +188,9 @@ To make a new branch AND checkout the new branch (we will call our new branch 'd
         Total 0 (delta 0), reused 0 (delta 0)
         remote:
         remote: To create a merge request for dev, visit:
-        remote:   https://gitlab.usna.edu/YOUR-GITLAB-HANDLE/branch_and_merge_exercise/merge_requests/new?merge_request%5Bsource_branch%5D=dev
+        remote:   https://gitlab.usna.edu/YOUR-GITHUB-HANDLE/jbcs_git_basics/merge_requests/new?merge_request%5Bsource_branch%5D=dev
         remote:
-        To gitlab.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git
+        To gitlab.usna.edu:YOUR-GITHUB-HANDLE/jbcs_git_basics.git
         * [new branch]      dev -> dev</pre>
     </details>
 
@@ -207,9 +214,9 @@ We are going to be going between the browser, the command line and Atom frequent
 
 **Browser (4 tabs open):**
 - This page, that you're currently reading right now.
-    - The URL should be: https://gitlab.usna.edu/ic470/branch_and_merge_exercise/
+    - The URL should be: https://gitlab.usna.edu/ic470/jbcs_git_basics/
 - Your repo (the fork you created) on gitlab.usna.edu.  
-    - The URL should look like: https://gitlab.usna.edu/YOUR-GITLAB-HANDLE/branch_and_merge_exercise/tree/dev
+    - The URL should look like: https://gitlab.usna.edu/YOUR-GITHUB-HANDLE/jbcs_git_basics/tree/dev
 - Happy Fun Ball `index.html` from your local file system
 - <a href=https://htmlcolorcodes.com/color-names/ target =_blank>Color Names</a>
 - All other tabs are closed, and no other Browser windows are open
@@ -282,8 +289,8 @@ In general it is best practice to make a new branch for each bug you are fixing 
         Total 3 (delta 2), reused 0 (delta 0)
         remote:
         remote: To create a merge request for link-files, visit:
-        remote:  `   `http://gitlab.cs.usna.edu/YOUR-GITLAB-HANDLE/branch_and_merge_exercise/merge_requests/new?merge_request%5Bsource_branch%5D=link-files
-        To git@gitlab.cs.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise.git
+        remote:  `   `http://github.com/YOUR-GITHUB-HANDLE/jbcs_git_basics/merge_requests/new?merge_request%5Bsource_branch%5D=link-files
+        To git@github.com:YOUR-GITHUB-HANDLE/jbcs_git_basics.git
         * [new branch]      link-files -> link-files</pre>
     </details>
 - Check your repo on USNA GitLab to see that the new branch is there like we did above!
@@ -343,12 +350,12 @@ Git merging can be done both locally via the command line, or remotely using a `
 ###### Command line Double-Check:
 - `git branch`: ensure you are on the `dev` branch (`git checkout dev` if *NOT*)  
 
-- `git pull origin master`: pulls any changes from origin (gitlab.cs.usna.edu) master (your master branch in origin) into your current local branch (`dev`)
+- `git pull origin master`: pulls any changes from origin (github.com) master (your master branch in origin) into your current local branch (`dev`)
 
     - This should come back with "Already up-to-date" but it is a good habit to pull from `master` to receive changes since you created your `dev` branch, especially before you try and merge the `dev` branch back into `master` in an effort to avoid merge conflicts in your `merge request`!  
 
     - <details><summary>Click for example terminal output</summary>
-        <pre>  From gitlab.cs.usna.edu:taylorpaul/branch_and_merge_exercise
+        <pre>  From github.com:taylorpaul/jbcs_git_basics
         * branch            master     -> FETCH_HEAD
         Already up-to-date.</pre>
     </details>  
@@ -497,7 +504,7 @@ remote: Enumerating objects: 1, done.
 remote: Counting objects: 100% (1/1), done.
 remote: Total 1 (delta 0), reused 0 (delta 0)
 Unpacking objects: 100% (1/1), done.
-From gitlab.usna.edu:YOUR-GITLAB-HANDLE/branch_and_merge_exercise
+From gitlab.usna.edu:YOUR-GITHUB-HANDLE/jbcs_git_basics
  * branch            dev        -> FETCH_HEAD
    9366335..fe1a3cd  dev        -> origin/dev
 Auto-merging index.html
@@ -548,7 +555,7 @@ Which is ALL of this:
         Writing objects: 100% (11/11), 1.05 KiB | 0 bytes/s, done.
         Total 11 (delta 7), reused 0 (delta 0)
         remote: Resolving deltas: 100% (7/7), completed with 3 local objects.
-        To https://gitlab.cs.usna.edu/YOUR-GITLAB-HANDLE/branch_and_merge_exercise
+        To https://github.com/YOUR-GITHUB-HANDLE/jbcs_git_basics
         * [new branch]      color-updates -> color-updates</pre>
     </details>
 
