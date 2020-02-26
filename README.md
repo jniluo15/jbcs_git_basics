@@ -21,19 +21,35 @@ _After this lesson, students will be able to:_
 * Login to your GitHub account!
 
 * Create a new ssh key on your linux lab machine in order to allow easy access to GitHub.com for this workshop:
-  * Open a terminal/shell (`ctrl + t`)
-  * In the shell run (replace with your email address): `$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
-  * I recommend using the following for *Enter file in which to save the key(...):* `~/.ssh/github_id_rsa`
+  * Open a terminal/shell: `ctrl + t`
+  * In the shell run (replace with your email address):
+  ```
+  $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+  ```
+  * I recommend using the following for *Enter file in which to save the key(...):*
+  ```
+  ~/.ssh/github_id_rsa
+  ```
   * Hit enter twice to skip providing a pass key! You should see output like this generated:
 
     * ![RSA Key Generation](img/RSA_out.png)
 
 * Add the SSH key to the lab machine's ssh-agent:
-  * Ensure agent is running: `eval $(ssh-agent -s)`
-  * Run in terminal: `ssh-add ~/.ssh/github_id_rsa`
+  * Ensure agent is running by running:
+  ```
+  eval $(ssh-agent -s)
+  ```
+
+  * Add your new SSH key to the ssh agent, run the command below in your terminal:
+  ```
+  ssh-add ~/.ssh/github_id_rsa
+  ```
 
 * Add the new SSH key to your GitHub account:
-  * To access your **PUBLIC KEY**, in terminal run: ` cat ~/.ssh/github_id_rsa.pub`
+  * To access your **PUBLIC KEY**, in terminal run:
+  ```
+  cat ~/.ssh/github_id_rsa.pub
+  ```
   * Copy output to clipboard
   * Go to account settings in github.com browser window and then go to `SSH and GPG keys`:
 
@@ -158,7 +174,11 @@ As a professional developer, you will do whatever it takes to finish this projec
 ###### Command line:
 - Navigate to a directory **OUTSIDE** of any other git directories where you would like to clone the *jbcs_git_basics* repo  
 
-- Run this command in your terminal: ```$git clone `git@github.com:YOUR-GITHUB-HANDLE/jbcs_git_basics.git` ``` (use `CTRL-V` to paste the URL from GitLab)  
+- Run this command in your terminal:
+```
+$git clone `git@github.com:YOUR-GITHUB-HANDLE/jbcs_git_basics.git`
+```
+(use `CTRL-V` to paste the URL from GitHub)  
 
 - The above command should create a new folder inside your current directory with a copy of everything in the Happy Fun Ball (jbcs_git_basics) remote repository, locally (on your computer) and initialize a new local git repository.
  Let's check:  
@@ -173,18 +193,17 @@ As a professional developer, you will do whatever it takes to finish this projec
 
   - `git status`  
 
-    - <details><summary>Click for example terminal output</summary>
+    - Example terminal output:
         <pre>  On branch master  
         Your branch is up-to-date with 'origin/master'.<br>
         nothing to commit, working tree clean</pre>
-    </details>  
 
   - `git remote -v` - to check your remote set up   
 
-    - <details><summary>Click for example terminal output</summary>  
+    - Example terminal output:
         <pre>  origin git@github.com:YOUR-GITHUB-HANDLE/jbcs_git_basics.git (fetch)  
         origin git@github.com:YOUR-GITHUB-HANDLE/jbcs_git_basics.git (push)</pre>
-    </details>  
+
 
 ---
 
@@ -194,7 +213,7 @@ To make a new branch AND checkout the new branch (we will call our new branch 'd
 
 - `git checkout -b dev`  
 
-    - <details><summary>Click for example terminal output</summary>
+    - Example terminal output:
         <pre>  Switched to a new branch 'dev'</pre>
     </details>
 
@@ -204,7 +223,7 @@ To make a new branch AND checkout the new branch (we will call our new branch 'd
 
 - `git status` to confirm everything looks like it should  
 
-    - <details><summary>Click for example terminal output</summary>
+    - Example terminal output:
         <pre>  On branch dev
         nothing to commit, working tree clean</pre>
     </details>
@@ -213,7 +232,7 @@ To make a new branch AND checkout the new branch (we will call our new branch 'd
 
   - `git push origin dev`
 
-    - <details><summary>Click for example terminal output</summary>
+    - Example terminal output:
         <pre> remote:
         remote: To create a merge request for dev, visit:
         remote:   https://github.com/YOUR-GITHUB-HANDLE/jbcs_git_basics/merge_requests/new?merge_request%5Bsource_branch%5D=dev
@@ -291,7 +310,7 @@ In general it is best practice to make a new branch for each bug you are fixing 
 
 ###### Command line:
 - `git status`
-    - <details><summary>Click for example terminal output</summary>
+    - Example terminal output:
         <pre>  On branch link-files
         Changes not staged for commit:
           (use "git add <file>..." to update what will be committed)
@@ -301,15 +320,13 @@ In general it is best practice to make a new branch for each bug you are fixing 
     </details>
 - `git add index.html`
 - `git commit -m 'index.html and main.css linked'`
-    - <details><summary>Click for example terminal output</summary>
+    - Example terminal output:
         <pre>  [link-files 7c03f6a] index.html and main.css linked
         1 file changed, 2 insertions(+), 2 deletions(-)</pre>
     </details>
 - `git push origin link-files`  (Remember: `origin`and `link-files` can be autocompeletd by using `tab`)
-    - <details><summary>Click for example terminal output</summary>
-        <pre>  You are accessing a U.S. Government (USG) Information System (IS)
-        ...
-        See User Agreement for details.
+    - Example terminal output:
+        <pre>  
         Counting objects: 3, done.
         Delta compression using up to 12 threads.
         Compressing objects: 100% (3/3), done.
@@ -382,7 +399,7 @@ Git merging can be done both locally via the command line, or remotely using a `
 
     - This should come back with "Already up-to-date" but it is a good habit to pull from `master` to receive changes since you created your `dev` branch, especially before you try and merge the `dev` branch back into `master` in an effort to avoid merge conflicts in your `merge request`!  
 
-    - <details><summary>Click for example terminal output</summary>
+    - Example terminal output:
         <pre>  From github.com:taylorpaul/jbcs_git_basics
         * branch            master     -> FETCH_HEAD
         Already up-to-date.</pre>
@@ -395,7 +412,7 @@ See the [git documentation](https://git-scm.com/docs/git-merge) for more informa
 - `git checkout master` (Notice: no `-b`)
 - `git pull origin master` (again just in case, note this command now affects our local `master` branch ONLY!)
 - `git merge dev`
-    - <details><summary>Click for example terminal output (Note: You might have different number of changes!)</summary>
+    - Example terminal output (Note: You might have different number of changes!)</summary>
         <pre>  Updating b519be4..f8cd536
         Fast-forward
         index.html | 16 ++++++++++++++
@@ -525,9 +542,7 @@ Aborting</pre>
 - `git pull origin dev` - to pull down your changes from the remote to your local copy
     - ERROR! Merge conflict! Example output:
 
-<pre>You are accessing a U.S. Government (USG) Information System (IS)
-...
-See User Agreement for details.
+<pre>
 remote: Enumerating objects: 1, done.
 remote: Counting objects: 100% (1/1), done.
 remote: Total 1 (delta 0), reused 0 (delta 0)
@@ -573,10 +588,8 @@ Which is ALL of this:
 - `git add index.html`
 - `git commit -m 'fixed merge conflict'`
 - `git push origin color-updates`
-    - <details><summary>Click for example terminal output</summary>
-        <pre>  You are accessing a U.S. Government (USG) Information System (IS)
-        ...
-        See User Agreement for details.  
+    - Example terminal output:
+        <pre>
         Counting objects: 11, done.
         Delta compression using up to 4 threads.
         Compressing objects: 100% (11/11), done.
