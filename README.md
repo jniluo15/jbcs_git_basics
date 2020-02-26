@@ -106,15 +106,15 @@ As a professional developer, you will do whatever it takes to finish this projec
 ###### Browser - GitLab:
 - Fork Happy-Fun-Ball (make a copy of this remote repository to your GitHub account):  
   - [Go here](https://github.com/taylorpaul/jbcs_git_basics) and click `fork` to create a copy to your personal repo.  
-    - ![Fork on GitLab](img/gitlab_fork.png)  
+![Fork on GitLab](img/gitlab_fork.png)  
 
 - Navigate to **YOUR** version on **YOUR** GitHub *jbcs_git_basics* repo
     - The URL should look like: https://github.com/YOUR-GITHUB-HANDLE/jbcs_git_basics/
 
-- Remove fork relationship
+<!-- - Remove fork relationship
     - In the left sidebar menu, click on Settings.
     - In the Advanced section click on the "Expand" button.
-    - Scroll down and click on the "Remove fork relationship" button, and follow the instructions.
+    - Scroll down and click on the "Remove fork relationship" button, and follow the instructions. -->
 
 - Go back to your project's home page, and click the *Copy URL to clipboard* button (on the right, beside `fork`)  
   - ![Copy button](img/gitlab_clone_url.png)
@@ -182,18 +182,14 @@ To make a new branch AND checkout the new branch (we will call our new branch 'd
   - `git push origin dev`
 
     - <details><summary>Click for example terminal output</summary>
-        <pre>  You are accessing a U.S. Government (USG) Information System (IS)
-        ...
-        See User Agreement for details.
-        Total 0 (delta 0), reused 0 (delta 0)
-        remote:
+        <pre> remote:
         remote: To create a merge request for dev, visit:
-        remote:   https://gitlab.usna.edu/YOUR-GITHUB-HANDLE/jbcs_git_basics/merge_requests/new?merge_request%5Bsource_branch%5D=dev
+        remote:   https://github.com/YOUR-GITHUB-HANDLE/jbcs_git_basics/merge_requests/new?merge_request%5Bsource_branch%5D=dev
         remote:
-        To gitlab.usna.edu:YOUR-GITHUB-HANDLE/jbcs_git_basics.git
+        To github.com:YOUR-GITHUB-HANDLE/jbcs_git_basics.git
         * [new branch]      dev -> dev</pre>
     </details>
-
+<!-- NOTE: Stopped here! Need to update branch images for github -->
 ###### Browser - GitLab:
 Select your new dev branch on GitLab (it should be there, refresh the tab if you don't see it.)
 You will see a a new message along the top of GitLab and can also see the new change from clicking the drop-down arrow next to *master*:  
@@ -210,15 +206,15 @@ You will see a a new message along the top of GitLab and can also see the new ch
 ***
 
 #### Part 3 - Organize yourself
-We are going to be going between the browser, the command line and Atom frequently. Be sure you can work efficiently and effectively by setting up a good workflow! Start by organizing your browser, terminal, and and Atom windows so that you can easily switch between them. Close extra tabs and browser windows.   
+We are going to be going between the browser, the command line and Atom frequently. Be sure you can work efficiently and effectively by setting up a good workflow! Start by organizing your browser, terminal, and  Atom windows so that you can easily switch between them. Close extra tabs and browser windows.   
 
 **Browser (4 tabs open):**
 - This page, that you're currently reading right now.
-    - The URL should be: https://gitlab.usna.edu/ic470/jbcs_git_basics/
-- Your repo (the fork you created) on gitlab.usna.edu.  
-    - The URL should look like: https://gitlab.usna.edu/YOUR-GITHUB-HANDLE/jbcs_git_basics/tree/dev
+    - The URL should be: https://github.com/taylorpaul/jbcs_git_basics/
+- Your repo (the fork you created) on github.com.  
+    - The URL should look like: https://github.com/YOUR-GITHUB-HANDLE/jbcs_git_basics/tree/dev
 - Happy Fun Ball `index.html` from your local file system
-- <a href=https://htmlcolorcodes.com/color-names/ target =_blank>Color Names</a>
+- <a href="https://htmlcolorcodes.com/color-names/" target =_blank>Color Names</a>
 - All other tabs are closed, and no other Browser windows are open
 
 **Atom:**
@@ -504,7 +500,7 @@ remote: Enumerating objects: 1, done.
 remote: Counting objects: 100% (1/1), done.
 remote: Total 1 (delta 0), reused 0 (delta 0)
 Unpacking objects: 100% (1/1), done.
-From gitlab.usna.edu:YOUR-GITHUB-HANDLE/jbcs_git_basics
+From github.com:YOUR-GITHUB-HANDLE/jbcs_git_basics
  * branch            dev        -> FETCH_HEAD
    9366335..fe1a3cd  dev        -> origin/dev
 Auto-merging index.html
