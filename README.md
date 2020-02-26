@@ -16,11 +16,37 @@ _After this lesson, students will be able to:_
 
 ### Gitting Started
 
+1. If you don't have one yet, create a GitHub account at https://github.com/ (make sure you can access the email you use to register here at USNA in order to verify your account via email).
+
+2. Login to your GitHub account!
+
+3. Create a new ssh key on your linux lab machine in order to allow easy access to GitHub.com for this workshop:
+  * Open a terminal/shell (`ctrl + t`)
+  * In the shell run (replace with your email address): `$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
+  * I recommend using the following for *Enter file in which to save the key(...):* `~/.ssh/github_id_rsa`
+  * Hit enter twice to skip providing a pass key! You should see output like this generated:
+
+  * ![RSA Key Generation](img/RSA_out.png)
+
+4. Add the SSH key to the lab machine's ssh-agent:
+  * Ensure agent is running: `eval $(ssh-agent -s)`
+  * Run in terminal: `ssh-add ~/.ssh/github_id_rsa`
+
+5. Add the new SSH key to your GitHub account:
+  * To access your **PUBLIC KEY**, in terminal run: ` cat ~/.ssh/github_id_rsa.pub`
+  * Copy output to clipboard
+  * Go to account settings in github.com browser window and then go to `SSH and GPG keys`:
+
+  * ![RSA Key Generation](img/github_to_ssh.png)
+
+  * Click `New SSH key` button in top right of page.
+
+  *
 https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
 $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
-
+<!--  -->
 ### Git Refresher
 So far, you have seen git used to retrieve files (pull) from a remote repository (on GitLab), tracking changes to files with git, and send files (push) from your computer (local version) to GitLab.
 
