@@ -16,39 +16,45 @@ _After this lesson, students will be able to:_
 
 ### Gitting Started
 
-1. If you don't have one yet, create a GitHub account at https://github.com/ (make sure you can access the email you use to register here at USNA in order to verify your account via email).
+* If you don't have one yet, create a GitHub account at https://github.com/ (make sure you can access the email you use to register here at USNA in order to verify your account via email).
 
-2. Login to your GitHub account!
+* Login to your GitHub account!
 
-3. Create a new ssh key on your linux lab machine in order to allow easy access to GitHub.com for this workshop:
+* Create a new ssh key on your linux lab machine in order to allow easy access to GitHub.com for this workshop:
   * Open a terminal/shell (`ctrl + t`)
   * In the shell run (replace with your email address): `$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"`
   * I recommend using the following for *Enter file in which to save the key(...):* `~/.ssh/github_id_rsa`
   * Hit enter twice to skip providing a pass key! You should see output like this generated:
 
-  * ![RSA Key Generation](img/RSA_out.png)
+    * ![RSA Key Generation](img/RSA_out.png)
 
-4. Add the SSH key to the lab machine's ssh-agent:
+* Add the SSH key to the lab machine's ssh-agent:
   * Ensure agent is running: `eval $(ssh-agent -s)`
   * Run in terminal: `ssh-add ~/.ssh/github_id_rsa`
 
-5. Add the new SSH key to your GitHub account:
+* Add the new SSH key to your GitHub account:
   * To access your **PUBLIC KEY**, in terminal run: ` cat ~/.ssh/github_id_rsa.pub`
   * Copy output to clipboard
   * Go to account settings in github.com browser window and then go to `SSH and GPG keys`:
 
-  * ![RSA Key Generation](img/github_to_ssh.png)
+    * ![RSA Key Add](img/github_to_SSH.png)
 
   * Click `New SSH key` button in top right of page.
 
-  *
+  * Pick name for SSH key: `jbcs_temp`
+
+  * Paste contents of `github_id_rsa.pub` as key.
+
+  * Should look like this, click *Add SSH Key* button:
+
+    * ![RSA Key Filled Out](img/complete_key.png)
 https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
-$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+* Congrats, you are now ready to start this exercise!
 
 <!--  -->
 ### Git Refresher
-So far, you have seen git used to retrieve files (pull) from a remote repository (on GitLab), tracking changes to files with git, and send files (push) from your computer (local version) to GitLab.
+So far, you have seen git used to retrieve files (pull) from a remote repository (on GitHub), tracking changes to files with git, and send files (push) from your computer (local version) to GitHub.
 
 When using git locally (on your computer), the commands are run from the Terminal (Command line).
 
@@ -80,7 +86,7 @@ Here is a table of commonly used git commands:
 | git | log| --oneline |  Shows a log of commits of a repo (--oneline shows a truncated message)_`q` to exit_|
 | git | status |  |  Shows the state of files in a repo (untracked, modified, staged)|
 
-Note: `fork` is not on this list because `fork` is not a git command; it is a collaboration-site-specific (both GitHub and GitLab use `fork`) for copying a repository on GitLab to a new location on GitLab.
+Note: `fork` is not on this list because `fork` is not a git command; it is a collaboration-site-specific (both GitHub and GitLab use `fork`) for copying a repository on GitHub to a new location on GitHub.
 
 ### Git VCS - Branches and Merging
 Git is a VCS (Version Control System). There are a few popular ones, but git ends up being a top choice because of its *lightweight* branching and merging feature.
@@ -117,7 +123,7 @@ To use branches, we will learn some new `git` commands
 
 Even though these are just five new commands, it requires some practice to master them. Let's get started!
 
-Note: You may have noticed that `git merge` is missing - we will be merging our branches via GitLab, so we will not use this command via the terminal.
+Note: You may have noticed that `git merge` is missing - we will be merging our branches via GitHub, so we will not use this command via the terminal.
 
 ## Scenario
 You have been hired by Wacky Products Incorporated. They are just weeks away from starting a global marketing campaign for their new hot product Happy Fun Ball and they want a top-notch web page launched as soon as possible.
@@ -129,7 +135,7 @@ As a professional developer, you will do whatever it takes to finish this projec
 
 ### Setup
 #### Part 1 - Get the files
-###### Browser - GitLab:
+###### Browser - GitHub:
 - Fork Happy-Fun-Ball (make a copy of this remote repository to your GitHub account):  
   - [Go here](https://github.com/taylorpaul/jbcs_git_basics) and click `fork` to create a copy to your personal repo.  
 ![Fork on GitLab](img/gitlab_fork.png)  
@@ -216,9 +222,9 @@ To make a new branch AND checkout the new branch (we will call our new branch 'd
         * [new branch]      dev -> dev</pre>
     </details>
 <!-- NOTE: Stopped here! Need to update branch images for github -->
-###### Browser - GitLab:
-Select your new dev branch on GitLab (it should be there, refresh the tab if you don't see it.)
-You will see a a new message along the top of GitLab and can also see the new change from clicking the drop-down arrow next to *master*:  
+###### Browser - GitHub:
+Select your new dev branch on GitHub (it should be there, refresh the tab if you don't see it).
+You will see a new message along the top of GitHub and can also see the new change from clicking the drop-down arrow next to *master*:  
 
 ![pull-down menu](img/gitlab_dev_branch.png)
 
