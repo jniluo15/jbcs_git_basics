@@ -1,4 +1,4 @@
-# Happy Fun Ball
+CTRL + # Happy Fun Ball
 
 ## A Lesson on Git Branches and Merging
 ### Citations
@@ -21,7 +21,7 @@ _After this lesson, students will be able to:_
 * Login to your GitHub account!
 
 * Create a new ssh key on your linux lab machine in order to allow easy access to GitHub.com for this workshop:
-  * Open a terminal/shell: `ctrl + t`
+  * Open a terminal/shell: `CTRL + t`
   * In the shell run (replace with your email address):
   ```
   $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
@@ -108,7 +108,7 @@ Note: `fork` is not on this list because `fork` is not a git command; it is a co
 Git is a VCS (Version Control System). There are a few popular ones, but git ends up being a top choice because of its *lightweight* branching and merging feature.
 
 If you think back to past projects without git, when you wanted to implement some major changes to your code and failed your popular options were:
-- `CTRL-Z` throughout our files and hope for the best
+- `CTRL + Z` throughout our files and hope for the best
 - Comment out a ton of code and hope to restore the functionality of our code to a previous version
 - Seriously contemplate coding out our project from scratch again
 - Curl up into a ball and hope the code would revert via magic
@@ -178,7 +178,7 @@ As a professional developer, you will do whatever it takes to finish this projec
 ```
 $git clone `git@github.com:YOUR-GITHUB-HANDLE/jbcs_git_basics.git`
 ```
-(use `CTRL-V` to paste the URL from GitHub)  
+(use `CTRL + V` to paste the URL from GitHub)  
 
 - The above command should create a new folder inside your current directory with a copy of everything in the Happy Fun Ball (jbcs_git_basics) remote repository, locally (on your computer) and initialize a new local git repository.
  Let's check:  
@@ -265,12 +265,15 @@ We are going to be going between the browser, the command line and Atom frequent
 - Your repo (the fork you created) on github.com.  
     - The URL should look like: https://github.com/YOUR-GITHUB-HANDLE/jbcs_git_basics/tree/dev
 - Happy Fun Ball `index.html` from your local file system
-- <a href="https://htmlcolorcodes.com/color-names/" target =_blank>Color Names</a>
+- <a href="https://htmlcolorcodes.com/color-names/" target =\_blank>Color Names</a>
 - All other tabs are closed, and no other Browser windows are open
 
 **Atom:**
-- directory tree (toggle view: `CTRL-\`).  
-  - See all Atom shortcuts : `CTRL-SHIFT-P` and type what you want to do!  
+- Add the *jbcs_git_basics* directory to your atom instance:
+  * `CTRL + SHIFT + A`
+  * Navigate to the directory where you cloned the repo and click `Select Folder`
+- directory tree (toggle view: `CTRL + \`).  
+  - See all Atom shortcuts : `CTRL + SHIFT + P` and type what you want to do!  
 - index.html  
 - main.css  
 
@@ -298,10 +301,10 @@ In general it is best practice to make a new branch for each bug you are fixing 
 ###### Atom - index.html :
 - In the index.html - between the` </title>` and `</head>` tags, let's insert a link to our css :
 - `<link rel="stylesheet" href="main.css">`
-- `CTRL-S` - Save our changes in atom
+- `CTRL + S` - Save our changes in atom
 
 ###### Browser - index.html:
-- `CTRL-R` - Reload our browser view of the `index.html`
+- `CTRL + R` - Reload our browser view of the `index.html`
 - The CSS should now be loaded into our `index.html`
 
 ***
@@ -385,7 +388,7 @@ Git merging can be done both locally via the command line, or remotely using a `
 
 - Check Atom (`index.html` has the link to CSS)  
 
-- Your browser view (`index.html` is displaying with CSS loaded - don't forget to `CTRL-R`/refresh your browser to be sure you are seeing the updated version)  
+- Your browser view (`index.html` is displaying with CSS loaded - don't forget to `CTRL + R`/refresh your browser to be sure you are seeing the updated version)  
 
 - If everything looks good, let's merge these changes into the master branch using the terminal! **Note:** This is somewhat unrealistic... sorry. In an actual project you would likely use the Terminal to merge your feature branch (`link-files`) to your development branch (`dev`), because the permissions for these branches would be less restrictive, and then you would likely have to request permissions to merge the *tested and error free* development branch via a `merge request` on GitLab to send changes into the master branch for production.
 
@@ -439,7 +442,7 @@ Now you should check your `master` branch on GitLab and in Atom to see that expe
 
 ###### Atom - index.html:
 - You probably noticed that index.html had a typo! On (or around) line 19 `class="pr"` should actually be `class="price"`.
-- Let's update that! (Don't forget `CTRL-S`/save) Now, it's not really our task, or our file to work on, but we're just being proactive and  helpful! What could possibly be wrong with that?
+- Let's update that! (Don't forget `CTRL + S`/save) Now, it's not really our task, or our file to work on, but we're just being proactive and  helpful! What could possibly be wrong with that?
 
 ###### Command line:
 - Let's go ahead and
@@ -451,7 +454,7 @@ Now you should check your `master` branch on GitLab and in Atom to see that expe
 - Now let's update the colors in the `body`, let's change `color` (font color), and `background-color` to whatever our heart desires. [Go ahead and use hexadecimal colors, rgb, hsl or some of the standard web colors.]( http://htmlcolorcodes.com/color-names/)
 
 Make changes here in main.css ![main.css](img/main_css.png)
-- When we've found the colors we like, we can go ahead and `CTRL-S/save`
+- When we've found the colors we like, we can go ahead and `CTRL + S/save`
 
 ###### Command line:
 - `git status` - see the status of our files
@@ -479,10 +482,10 @@ Go through atom and the browser to see that your changes have come back
 ###### Atom - main.css:
 - Let's make one more color change, now that we are on our color-updates branch. `.price` change the color from orange, to whatever color you want
 - Can't find `.price`?
-- `CTRL-F` will open a find/replace tab at the bottom of Atom and let you look for `.price`
+- `CTRL + F` will open a find/replace tab at the bottom of Atom and let you look for `.price`
 - `esc` to close the find/replace tab
 - make your changes (we are changing the color of elements with the class of `price`)
-- `CTRL-S` -Don't forget to save your file
+- `CTRL + S` -Don't forget to save your file
 - Refresh your browser to see your changes  
 
 ***  
@@ -514,7 +517,7 @@ Aborting</pre>
 
 ###### Atom - index.hmtl:
 - Update the price of happy fun ball from `$14.95` to `$24.95` (~ line 19 of `index.html`)
-- `CTRL-S`/save
+- `CTRL + S`/save
 
 ###### Command line:
 - `git add index.html`
@@ -582,7 +585,7 @@ Which is ALL of this:
 
 *Note:* your numbers/letters after the `>>>>>>>` should be different
 - Let's also clean up any extra white space
-- `CTRL-S`/save
+- `CTRL + S`/save
 
 ###### Command line:
 - `git add index.html`
