@@ -1,4 +1,4 @@
-CTRL + # Happy Fun Ball
+# Happy Fun Ball
 
 ## A Lesson on Git Branches and Merging
 ### Citations
@@ -233,17 +233,18 @@ To make a new branch AND checkout the new branch (we will call our new branch 'd
   - `git push origin dev`
 
     - Example terminal output:
-        <pre> remote:
-        remote: To create a merge request for dev, visit:
-        remote:   https://github.com/YOUR-GITHUB-HANDLE/jbcs_git_basics/merge_requests/new?merge_request%5Bsource_branch%5D=dev
-        remote:
-        To github.com:YOUR-GITHUB-HANDLE/jbcs_git_basics.git
-        * [new branch]      dev -> dev</pre>
-    </details>
-<!-- NOTE: Stopped here! Need to update branch images for github -->
+        <pre> Total 0 (delta 0), reused 0 (delta 0)
+remote:
+remote: Create a pull request for 'dev' on GitHub by visiting:
+remote:      https://github.com/taylorpaul/jbcs_git_basics/pull/new/dev
+remote:
+To git@github.com:taylorpaul/jbcs_git_basics.git
+ * [new branch]      dev -> dev
+</pre>
+
 ###### Browser - GitHub:
 Select your new dev branch on GitHub (it should be there, refresh the tab if you don't see it).
-You will see a new message along the top of GitHub and can also see the new change from clicking the drop-down arrow next to *master*:  
+You will see the new change from clicking the drop-down arrow next to *master*:  
 
 ![pull-down menu](img/gitlab_dev_branch.png)
 
@@ -327,7 +328,7 @@ In general it is best practice to make a new branch for each bug you are fixing 
         <pre>  [link-files 7c03f6a] index.html and main.css linked
         1 file changed, 2 insertions(+), 2 deletions(-)</pre>
     </details>
-- `git push origin link-files`  (Remember: `origin`and `link-files` can be autocompeletd by using `tab`)
+- `git push origin link-files`  (Remember: `origin`and `link-files` can be auto-completed by using `tab`)
     - Example terminal output:
         <pre>  
         Counting objects: 3, done.
@@ -341,15 +342,15 @@ In general it is best practice to make a new branch for each bug you are fixing 
         To git@github.com:YOUR-GITHUB-HANDLE/jbcs_git_basics.git
         * [new branch]      link-files -> link-files</pre>
     </details>
-- Check your repo on USNA GitLab to see that the new branch is there like we did above!
+- Check your repo on github.com to see that the new branch is there like we did above!
 
 ***
 
-#### Part 4 - Merge New Feature into Dev Branch via GitLab
-Git merging can be done both locally via the command line, or remotely using a `merge request` via GitLab (Note: a `merge request` on GitLab is equivalent to a `pull request` on GitHub, both are completing a merge of branches!). When working by yourself, when you have full permissions to all project branches, you will likely use the terminal to conduct your merges. When working on a collaboration project, where usually only a select group of people (like your Team Leader) have permission to merge into production branches, you will more often initiate a merge via a GitLab `merge request`!  Let's start with the `merge request` method!
+#### Part 4 - Merge New Feature into Dev Branch via GitHub
+Git merging can be done both locally via the command line, or remotely using a `pull request` via GitHub (Note for GitLab users: a `merge request` on GitLab is equivalent to a `pull request` on GitHub, both are completing a merge of branches!). When working by yourself, when you have full permissions to all project branches, you will likely use the terminal to conduct your merges. When working on a collaboration project, where usually only a select group of people (like your Team Leader) have permission to merge into production branches, you will more often initiate a merge via a GitHub `pull request`!  Let's start with the `pull request` method!
 
 
-###### Browser - GitLab:
+###### Browser - GitHub:
 - See new `link-files` branch (either a message will pop up or if no message in view use the branch pull down to see)
   - ![Merge Request Screenshot](img/gitlab_merge_request.png)
 
