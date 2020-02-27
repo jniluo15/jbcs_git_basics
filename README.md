@@ -650,6 +650,8 @@ Which is ALL of this:
 ***
 
 ### Hungry for More?
+- Checkout: https://try.github.io/
+- And when you are in trouble with git: https://sethrobertson.github.io/GitFixUm/fixup.html
 - Make a new branch, continue to update the Happy Fun Ball web page, and merge back your changes (New Feature Ideas: change color of Happy Fun Ball. Add a google font. Add some js/jQuery to show/hide Happy Fun Ball's Warnings.)
 - Research and try `git stash`
 - Delete a branch locally and remotely:
