@@ -229,7 +229,7 @@ To make a new branch AND checkout the new branch (we will call our new branch 'd
         nothing to commit, working tree clean</pre>
 
 
-- Now let's push this *new* local branch `dev` to your remote repo on GitLab:    
+- Now let's push this *new* local branch `dev` to your remote repo on GitHub:    
 
   - `git push origin dev`
 
@@ -337,7 +337,7 @@ In general it is best practice to make a new branch for each bug you are fixing 
         Writing objects: 100% (3/3), 348 bytes | 348.00 KiB/s, done.
         Total 3 (delta 2), reused 0 (delta 0)
         remote:
-        remote: To create a merge request for link-files, visit:
+        remote: To create a pull request for link-files, visit:
         remote:  `   `http://github.com/YOUR-GITHUB-HANDLE/jbcs_git_basics/merge_requests/new?merge_request%5Bsource_branch%5D=link-files
         To git@github.com:YOUR-GITHUB-HANDLE/jbcs_git_basics.git
         * [new branch]      link-files -> link-files</pre>
@@ -351,33 +351,28 @@ Git merging can be done both locally via the command line, or remotely using a `
 
 
 ###### Browser - GitHub:
-- See new `link-files` branch (either a message will pop up or if no message in view use the branch pull down to see)
+- See new `link-files` branch in your repo on github.com, follow the screenshot below to create a new `pull request`:
   - ![Merge Request Screenshot](img/gitlab_merge_request.png)
-
-
-- You should see a blue `Create merge request` button as above. Click it!
 - The title of your request matches your commit message by default, update it as you see fit.
 - Add a longer description of what you accomplished on your branch if you desire.
-- Explore some of the Assignee, [Milestone](https://docs.gitlab.com/ce/user/project/milestones/) and [Labels](https://docs.gitlab.com/ce/user/project/labels.html) features of GitLab, you can add as many of these as you desire.
-- Make sure the Source branch (`link-files`) and Target branch (`dev`) make sense (match below). If not click `Change branches` and adjust necessary Source and Target branches:
+- Explore some of the Assignee, Milestone and Labels features of GitHub, you can add as many of these as you desire.
+- Make sure the compare (`link-files`) and base branch (`dev`) make sense (match below). If not adjust necessary base and compare branches using the drop-down menu:
   - ![Source branch](img/gitlab_merge_branches.png)
 
-
-- Go ahead and press the `Submit merge request` button, wait a moment and you should see a green `Merge` button about midway down the new page.  <br>
-<strong>Note:</strong> You may see a BLUE `Merge when pipeline succeeds` button with a dropdown arrow.  If you do, select the dropdown arrow and click on `Merge immediately`.
+- Go ahead and press the `Create pull request` button, wait a moment and you should see a green `Merge pull request` button about midway down the new page.
   - ![Merge with Checkbox](img/gitlab_merge.png)
 
 
-- Press the button, it will take a few seconds and you should see a success message!
+- When it appears, press the `Confirm merge` button. You should get redirect and see a success message:
   - ![image of a successful merge on GitLab](img/merge_success.png)
 
 
 <br>
- **Note:** When you work on a team it is unlikely that you would merge your own `merge requests`
+ **Note:** When you work on a team it is unlikely that you would merge your own `pull requests`
 
- **Note:** You can refuse a merge and close the merge request by pressing the grey `Close merge request` button further down
+ **Note:** You can refuse a merge and close the pull request by pressing the grey `Close pull request` button further down
 
- **Note:** After a successful merge, click the `Remove Source Branch` button to remove branches from the repo that are single feature branches. (i.e. you wouldn't never remove the `dev` branch but might remove the `link-files` branch right away)
+ **Note:** After a successful merge, click the `Remove Source Branch` button to remove branches from the repo that are single feature branches. (i.e. you wouldn't remove the `dev` branch but might remove the `link-files` branch right away)
 
 ***
 
@@ -391,7 +386,7 @@ Git merging can be done both locally via the command line, or remotely using a `
 
 - Your browser view (`index.html` is displaying with CSS loaded - don't forget to `CTRL + R`/refresh your browser to be sure you are seeing the updated version)  
 
-- If everything looks good, let's merge these changes into the master branch using the terminal! **Note:** This is somewhat unrealistic... sorry. In an actual project you would likely use the Terminal to merge your feature branch (`link-files`) to your development branch (`dev`), because the permissions for these branches would be less restrictive, and then you would likely have to request permissions to merge the *tested and error free* development branch via a `merge request` on GitLab to send changes into the master branch for production.
+- If everything looks good, let's merge these changes into the master branch using the terminal! **Note:** This is somewhat unrealistic... sorry. In an actual project you would likely use the Terminal to merge your feature branch (`link-files`) to your development branch (`dev`), because the permissions for these branches would be less restrictive, and then you would likely have to request permissions to merge the *tested and error free* development branch via a `pull request` on GitHub to send changes into the master branch for production.
 
 ***
 
@@ -401,7 +396,7 @@ Git merging can be done both locally via the command line, or remotely using a `
 
 - `git pull origin master`: pulls any changes from origin (github.com) master (your master branch in origin) into your current local branch (`dev`)
 
-    - This should come back with "Already up-to-date" but it is a good habit to pull from `master` to receive changes since you created your `dev` branch, especially before you try and merge the `dev` branch back into `master` in an effort to avoid merge conflicts in your `merge request`!  
+    - This should come back with "Already up-to-date" but it is a good habit to pull from `master` to receive changes since you created your `dev` branch, especially before you try and merge the `dev` branch back into `master` in an effort to avoid merge conflicts in your `pull request`!  
 
     - Example terminal output:
         <pre>  From github.com:taylorpaul/jbcs_git_basics
@@ -422,9 +417,9 @@ See the [git documentation](https://git-scm.com/docs/git-merge) for more informa
         index.html | 16 ++++++++++++++
         1 file changed, 1 insertions(+), 1 deletions(-)</pre>
     </details>
-- `git push origin master` (in order to send our changes to the remote: GitLab)
+- `git push origin master` (in order to send our changes to the remote: GitHub)
 
-Now you should check your `master` branch on GitLab and in Atom to see that expected changes are present! Refresh your browser and you should see CSS applied to `index.html`!
+Now you should check your `master` branch on GitHub and in Atom to see that expected changes are present! Refresh your browser and you should see CSS applied to `index.html`!
 
 ***
 
@@ -524,16 +519,16 @@ Aborting</pre>
 - `git add index.html`
 - `git commit -m 'fixed price of Happy Fun Ball in index.html'`
 - `git pull origin dev` (this should come back clean, but it is good practice to pull before pushing)
-- `git push origin price-fix` to create a new branch on GitLab
+- `git push origin price-fix` to create a new branch on GitHub
 
 
 ***
 ### Merging Our New Feature into the Dev branch
-###### Browser - GitLab:
+###### Browser - GitHub:
 - See our new branch
-- Follow the instructions provided previously for creating a new `merge request`
-- Wait a moment to let GitLab tell you if there are any merge conflicts
-- All clear! Go ahead and press the `Merge` button (Note: when you work on a team, it is unlikely that you would accept your own merge requests)
+- Follow the instructions provided previously for creating a new `Pull request`
+- Wait a moment to let GitHub tell you if there are any merge conflicts
+- All clear! Go ahead and press the `Merge` button (Note: when you work on a team, it is unlikely that you would accept your own pull requests)
 - After the merge is complete, go ahead and click the `Remove Source Branch` button for this single feature branch.
 
 ***
@@ -626,8 +621,8 @@ Which is ALL of this:
 - `git commit -m 'updated colors'`
 - `git push origin color-updates`
 
-###### Browser - GitLab :
-- Complete the steps covered previously to submit and accept a `merge request` via GitLab from the `color-updates` branch to the `dev` branch
+###### Browser - GitHub :
+- Complete the steps covered previously to submit and accept a `pull request` via GitHub from the `color-updates` branch to the `dev` branch
 - After the merge is complete, go ahead and click the `Remove Source Branch` button for this single feature branch.
 
 ###### Command line:
@@ -646,23 +641,12 @@ Which is ALL of this:
 - `git pull origin dev` (yes, we _just_ did this, but it is a good habit to do a pull before doing a push. It is ok if git tells you `Already up-to-date` )
 - `git push origin dev` (it is ok if git tells you that `Everything up-to-date`)
 
-###### Browser - GitLab:
-- In the left sidebar, click on `Merge Requests` and then click the green `New merge request` button.  
-- Select `dev` as the `Source branch` and `master` as the `Target branch` for your repository, and then click the `Compare branches and continue` button.
-- Then continue as you have done before to submit and accept this merge request.
+###### Browser - GitHub:
+- In the project repository, with the dev branch selected from the drop down, click on `New pull request` button.  
+- Select `dev` as the `compare branch` and `master` as the `base branch` for your repository, and then click the `Create pull request` button.
+- Then continue as you have done before to submit and accept this pull request.
 - Check to see that your changes have been successfully made to the master branch!
 - Because the dev branch is not a single feature update, your should NOT remove it.
-
-***
-
-
-### Deliverables!  aka: How to get credit for this Lab!
-- In the left sidebar menu, click on Repository, then click on Graph.
-- The graph will show all the changes, branching, and merging activity that you completed on the project for this lab.
-- Make sure the internal graph window is scrolled all the way to the top.
-- Print this page using your browser's print menu.
-- Put your name on the printout and turn it in to your instructor.
-
 
 ***
 
@@ -672,7 +656,7 @@ Which is ALL of this:
 - Delete a branch locally and remotely:
   - Remotely: `git push origin --delete branch_name`
   - Locally: `git branch -d branch_name`
-  - You can also do this in GitLab when you accept a `merge`
+  - You can also do this in GitHub when you accept a `Pull request`
 
 
 ### Sudden and Permanent Shut Down of Wacky Products Incorporated
@@ -682,7 +666,7 @@ Which is ALL of this:
 ***
 
 ### Cleanup (Optional)
-- If you would like to delete this project from your GitLab Account, follow these steps:
-    - With your project open, in the left sidebar menu, click on Settings.
-    - In the Advanced section click on the "Expand" button.
-    - Scroll down and click on the "Remove project" button, and follow the instructions.
+- If you would like to delete this project from your GitHub Account, follow these steps:
+    - With your project open, in the menu along the top of the repo, click on Settings.
+    - In the Danger Zone section click on the "Delete this repository" button.
+    - Make any necessary confirmations to delete!
