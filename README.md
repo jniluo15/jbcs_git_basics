@@ -46,11 +46,13 @@ _After this lesson, students will be able to:_
   ```
 
 * Add the new SSH key to your GitHub account:
+
   * To access your **PUBLIC KEY**, in terminal run:
   ```
   cat ~/.ssh/github_id_rsa.pub
   ```
   * Copy output to clipboard
+
   * Go to account settings in github.com browser window and then go to `SSH and GPG keys`:
 
     * ![RSA Key Add](img/github_to_SSH.png)
@@ -58,13 +60,13 @@ _After this lesson, students will be able to:_
   * Click `New SSH key` button in top right of page.
 
   * Pick name for SSH key: `jbcs_temp`
+    * It would be prudent to delete this SSH key on github.com (and the lab machine) once you complete the exercise.
 
   * Paste contents of `github_id_rsa.pub` as key.
 
   * Should look like this, click *Add SSH Key* button:
 
     * ![RSA Key Filled Out](img/complete_key.png)
-https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
 * Congrats, you are now ready to start this exercise!
 
@@ -215,7 +217,7 @@ To make a new branch AND checkout the new branch (we will call our new branch 'd
 
     - Example terminal output:
         <pre>  Switched to a new branch 'dev'</pre>
-    </details>
+
 
 - `ls`  
 
@@ -226,7 +228,7 @@ To make a new branch AND checkout the new branch (we will call our new branch 'd
     - Example terminal output:
         <pre>  On branch dev
         nothing to commit, working tree clean</pre>
-    </details>
+
 
 - Now let's push this *new* local branch `dev` to your remote repo on GitLab:    
 
@@ -234,13 +236,13 @@ To make a new branch AND checkout the new branch (we will call our new branch 'd
 
     - Example terminal output:
         <pre> Total 0 (delta 0), reused 0 (delta 0)
-remote:
-remote: Create a pull request for 'dev' on GitHub by visiting:
-remote:      https://github.com/taylorpaul/jbcs_git_basics/pull/new/dev
-remote:
-To git@github.com:taylorpaul/jbcs_git_basics.git
- * [new branch]      dev -> dev
-</pre>
+        remote:
+        remote: Create a pull request for 'dev' on GitHub by visiting:
+        remote:      https://github.com/taylorpaul/jbcs_git_basics/pull/new/dev
+        remote:
+        To git@github.com:taylorpaul/jbcs_git_basics.git
+        * [new branch]      dev -> dev
+        </pre>
 
 ###### Browser - GitHub:
 Select your new dev branch on GitHub (it should be there, refresh the tab if you don't see it).
