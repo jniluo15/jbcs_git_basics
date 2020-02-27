@@ -367,7 +367,6 @@ Git merging can be done both locally via the command line, or remotely using a `
   - ![image of a successful merge on GitLab](img/merge_success.png)
 
 
-<br>
  **Note:** When you work on a team it is unlikely that you would merge your own `pull requests`
 
  **Note:** You can refuse a merge and close the pull request by pressing the grey `Close pull request` button further down
