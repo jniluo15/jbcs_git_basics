@@ -218,7 +218,6 @@ To make a new branch AND checkout the new branch (we will call our new branch 'd
     - Example terminal output:
         <pre>  Switched to a new branch 'dev'</pre>
 
-
 - `ls`  
 
     - `index.html` & `main.css`, etc. - should still be there  
@@ -241,8 +240,7 @@ To make a new branch AND checkout the new branch (we will call our new branch 'd
         remote:      https://github.com/taylorpaul/jbcs_git_basics/pull/new/dev
         remote:
         To git@github.com:taylorpaul/jbcs_git_basics.git
-        * [new branch]      dev -> dev
-        </pre>
+        * [new branch]      dev -> dev</pre>
 
 ###### Browser - GitHub:
 Select your new dev branch on GitHub (it should be there, refresh the tab if you don't see it).
@@ -253,7 +251,7 @@ You will see the new change from clicking the drop-down arrow next to *master*:
 
 ###### Command line:
 - From the terminal in your project directory run `atom .` to open the project directory in atom
-- Use one of the two commands below to open index.html in your preferred browswer
+- Use one of the two commands below to open index.html in your preferred browser
     - `google-chrome index.html &`
     - `firefox index.html &`
 
